@@ -124,6 +124,51 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     /**
+     * Get the list of available Google Fonts.
+     *
+     * @return array Font name => Google Fonts URL parameter
+     */
+    public static function get_google_fonts(): array {
+        return [
+            'Space Grotesk' => 'Space+Grotesk:wght@400;500;600;700',
+            'Work Sans'     => 'Work+Sans:wght@400;500;600;700',
+            'Inter'         => 'Inter:wght@400;500;600;700',
+            'DM Sans'       => 'DM+Sans:wght@400;500;600;700',
+            'Outfit'        => 'Outfit:wght@400;500;600;700',
+            'Plus Jakarta Sans' => 'Plus+Jakarta+Sans:wght@400;500;600;700',
+        ];
+    }
+
+    /**
+     * Output a Google Fonts link tag based on the theme setting.
+     *
+     * @return string HTML link element for the selected Google Font
+     */
+    public function fontcss(): string {
+        $fontname = get_config('theme_holland', 'googlefont');
+        if (empty($fontname)) {
+            $fontname = 'Space Grotesk';
+        }
+
+        $fonts = self::get_google_fonts();
+        if (!isset($fonts[$fontname])) {
+            $fontname = 'Space Grotesk';
+        }
+
+        $param = $fonts[$fontname];
+        $url = 'https://fonts.googleapis.com/css2?family=' . $param . '&display=swap';
+
+        $output = '<link rel="preconnect" href="https://fonts.googleapis.com">';
+        $output .= '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+        $output .= '<link rel="stylesheet" href="' . $url . '">';
+
+        // Inject a CSS variable override so holland.scss picks up the selected font.
+        $output .= '<style>:root { --ho-font-modern: \'' . $fontname . '\', \'Helvetica Neue\', sans-serif; }</style>';
+
+        return $output;
+    }
+
+    /**
      * Output dev CSS for theme designer mode
      *
      * @return string CSS link tag for dev server or empty string

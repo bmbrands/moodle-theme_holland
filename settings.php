@@ -44,6 +44,19 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Google Font selection.
+    $fonts = \theme_holland\output\core_renderer::get_google_fonts();
+    $fontchoices = array_combine(array_keys($fonts), array_keys($fonts));
+    $setting = new admin_setting_configselect(
+        'theme_holland/googlefont',
+        get_string('googlefont', 'theme_holland'),
+        get_string('googlefont_desc', 'theme_holland'),
+        'Space Grotesk',
+        $fontchoices
+    );
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // Featured courses enabled.
     $setting = new admin_setting_configcheckbox(
         'theme_holland/featuredcoursesenabled',
