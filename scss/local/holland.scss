@@ -1,0 +1,776 @@
+// ============================================================================
+// Holland Theme - Modernist Design System
+// Inspired by De Stijl, Bauhaus, Memphis, and Dutch Modernism
+// ============================================================================
+
+// Font Imports
+// Suggested fonts for geometric modernism:
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.holland {
+    // ========================================================================
+    // Color Variables - Modernist Palette
+    // ========================================================================
+
+    // Primary De Stijl Colors (Mondrian-inspired)
+    --ho-stijl-red: #E63946;        // Bold red
+    --ho-stijl-blue: #1D3557;       // Deep blue
+    --ho-stijl-yellow: #F1C40F;     // Vibrant yellow
+    --ho-stijl-black: #14213D;      // Rich black
+    --ho-stijl-white: #F8F9FA;      // Off-white
+
+    // Bauhaus Colors (Industrial elegance)
+    --ho-bauhaus-red: #D62828;
+    --ho-bauhaus-blue: #023E8A;
+    --ho-bauhaus-yellow: #FFB703;
+    --ho-bauhaus-gray: #495057;
+
+    // Rietveld Colors (Chair-inspired)
+    --ho-rietveld-red: #DD4132;
+    --ho-rietveld-blue: #0077B6;
+    --ho-rietveld-yellow: #FCA311;
+    --ho-rietveld-black: #2B2D42;
+
+    // Memphis Design Colors (Postmodern playfulness)
+    --ho-memphis-pink: #FF006E;
+    --ho-memphis-cyan: #00B4D8;
+    --ho-memphis-lime: #CAFFBF;
+    --ho-memphis-violet: #7209B7;
+    --ho-memphis-coral: #FF7F51;
+
+    // Contemporary Dutch Colors
+    --ho-orange: #FF6B35;           // Dutch orange
+    --ho-canal-blue: #006BA6;       // Amsterdam canals
+    --ho-tulip-pink: #FF006E;       // Tulip fields
+    --ho-windmill-gray: #8D99AE;    // Dutch skies
+
+    // Neutral Palette
+    --ho-neutral-100: #F8F9FA;
+    --ho-neutral-200: #E9ECEF;
+    --ho-neutral-300: #DEE2E6;
+    --ho-neutral-400: #CED4DA;
+    --ho-neutral-500: #ADB5BD;
+    --ho-neutral-600: #6C757D;
+    --ho-neutral-700: #495057;
+    --ho-neutral-800: #343A40;
+    --ho-neutral-900: #212529;
+
+    // Semantic Colors
+    --ho-success: #06D6A0;
+    --ho-warning: #FFB703;
+    --ho-danger: #E63946;
+    --ho-info: #00B4D8;
+
+    // Geometric Accents
+    --ho-geometric-1: #FF006E;
+    --ho-geometric-2: #FB5607;
+    --ho-geometric-3: #FFBE0B;
+    --ho-geometric-4: #8338EC;
+    --ho-geometric-5: #3A86FF;
+
+    // Typography
+    --ho-font-modern: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+    --ho-font-geometric: 'Work Sans', 'Arial', sans-serif;
+
+    // Spacing & Grid (Modular scale)
+    --ho-space-xs: 0.25rem;    // 4px
+    --ho-space-sm: 0.5rem;     // 8px
+    --ho-space-md: 1rem;       // 16px
+    --ho-space-lg: 1.5rem;     // 24px
+    --ho-space-xl: 2rem;       // 32px
+    --ho-space-2xl: 3rem;      // 48px
+    --ho-space-3xl: 4rem;      // 64px
+
+    // Border Radius (Geometric)
+    --ho-radius-none: 0;
+    --ho-radius-sm: 0.125rem;
+    --ho-radius-md: 0.25rem;
+    --ho-radius-lg: 0.5rem;
+    --ho-radius-geometric: 0; // Pure geometric shapes
+
+    // Shadows (Layered modernism)
+    --ho-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --ho-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --ho-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --ho-shadow-geometric: 4px 4px 0 rgba(0, 0, 0, 0.2);
+
+    // ========================================================================
+    // Typography System
+    // ========================================================================
+
+    font-family: var(--ho-font-geometric);
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: var(--ho-font-modern);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+
+    .ho-heading-display {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+    }
+
+    .ho-text-geometric {
+        font-family: var(--ho-font-modern);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    // ========================================================================
+    // Button System - Modernist Design
+    // ========================================================================
+
+    .btn-holland {
+        font-family: var(--ho-font-modern);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: var(--ho-space-md) var(--ho-space-xl);
+        border: none;
+        border-radius: var(--ho-radius-geometric);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--ho-shadow-geometric);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    .btn-stijl {
+        @extend .btn-holland;
+        background-color: var(--ho-stijl-red);
+        color: var(--ho-stijl-white);
+
+        &:hover {
+            background-color: var(--ho-bauhaus-red);
+            color: var(--ho-stijl-white);
+        }
+    }
+
+    .btn-rietveld {
+        @extend .btn-holland;
+        background-color: var(--ho-rietveld-blue);
+        color: var(--ho-stijl-white);
+        border: 3px solid var(--ho-stijl-black);
+
+        &:hover {
+            background-color: var(--ho-bauhaus-blue);
+            color: var(--ho-stijl-white);
+        }
+    }
+
+    .btn-bauhaus {
+        @extend .btn-holland;
+        background-color: var(--ho-stijl-yellow);
+        color: var(--ho-stijl-black);
+
+        &:hover {
+            background-color: var(--ho-bauhaus-yellow);
+            color: var(--ho-stijl-black);
+        }
+    }
+
+    .btn-memphis {
+        @extend .btn-holland;
+        background: linear-gradient(135deg, var(--ho-memphis-pink), var(--ho-memphis-violet));
+        color: var(--ho-stijl-white);
+        border-radius: var(--ho-radius-lg);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+            background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255, 255, 255, 0.5) 50%, rgba(229, 172, 142, 0));
+            transform: rotateZ(60deg) translate(-5em, 7.5em);
+        }
+
+        &:hover::after {
+            animation: sheen 0.6s forwards;
+        }
+    }
+
+    @keyframes sheen {
+        100% {
+            transform: rotateZ(60deg) translate(1em, -9em);
+        }
+    }
+
+    .btn-dutch {
+        @extend .btn-holland;
+        background-color: var(--ho-orange);
+        color: var(--ho-stijl-white);
+
+        &:hover {
+            background-color: darken(#FF6B35, 10%);
+            color: var(--ho-stijl-white);
+        }
+    }
+
+    // ========================================================================
+    // Background Utility Classes
+    // ========================================================================
+
+    .bg-holland-stijl-red { background-color: var(--ho-stijl-red) !important; color: var(--ho-stijl-white) !important; }
+    .bg-holland-stijl-blue { background-color: var(--ho-stijl-blue) !important; color: var(--ho-stijl-white) !important; }
+    .bg-holland-stijl-yellow { background-color: var(--ho-stijl-yellow) !important; color: var(--ho-stijl-black) !important; }
+    .bg-holland-stijl-black { background-color: var(--ho-stijl-black) !important; color: var(--ho-stijl-white) !important; }
+
+    .bg-holland-rietveld {
+        background: linear-gradient(135deg,
+            var(--ho-rietveld-red) 0%,
+            var(--ho-rietveld-red) 33%,
+            var(--ho-rietveld-blue) 33%,
+            var(--ho-rietveld-blue) 66%,
+            var(--ho-rietveld-yellow) 66%,
+            var(--ho-rietveld-yellow) 100%
+        ) !important;
+        color: var(--ho-stijl-white) !important;
+    }
+
+    .bg-holland-mondrian {
+        background-image:
+            linear-gradient(0deg, var(--ho-stijl-black) 0px, transparent 2px),
+            linear-gradient(90deg, var(--ho-stijl-black) 0px, transparent 2px);
+        background-size: 100px 100px;
+        background-color: var(--ho-stijl-white);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            width: 30%;
+            height: 25%;
+            background-color: var(--ho-stijl-red);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 15%;
+            right: 25%;
+            width: 25%;
+            height: 30%;
+            background-color: var(--ho-stijl-blue);
+        }
+    }
+
+    .bg-holland-bauhaus {
+        background: radial-gradient(circle at 30% 50%, var(--ho-bauhaus-red) 0%, var(--ho-bauhaus-blue) 100%);
+        color: var(--ho-stijl-white) !important;
+    }
+
+    .bg-holland-memphis {
+        background-color: var(--ho-memphis-cyan);
+        background-image:
+            repeating-linear-gradient(45deg, transparent, transparent 10px, var(--ho-memphis-pink) 10px, var(--ho-memphis-pink) 20px),
+            repeating-linear-gradient(-45deg, transparent, transparent 10px, var(--ho-memphis-violet) 10px, var(--ho-memphis-violet) 20px);
+        background-size: 50% 50%;
+        background-position: 0 0, 100% 0;
+        background-repeat: no-repeat;
+    }
+
+    .bg-holland-orange { background-color: var(--ho-orange) !important; color: var(--ho-stijl-white) !important; }
+    .bg-holland-canal { background-color: var(--ho-canal-blue) !important; color: var(--ho-stijl-white) !important; }
+    .bg-holland-tulip { background-color: var(--ho-tulip-pink) !important; color: var(--ho-stijl-white) !important; }
+
+    // ========================================================================
+    // Card Components - Geometric Design
+    // ========================================================================
+
+    .card-holland {
+        border: 3px solid var(--ho-stijl-black);
+        border-radius: var(--ho-radius-geometric);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: var(--ho-stijl-white);
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 8px 8px 0 var(--ho-stijl-black);
+        }
+
+        .card-header {
+            background-color: var(--ho-stijl-red);
+            color: var(--ho-stijl-white);
+            border-bottom: 3px solid var(--ho-stijl-black);
+            padding: var(--ho-space-lg);
+            font-family: var(--ho-font-modern);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-body {
+            padding: var(--ho-space-xl);
+        }
+    }
+
+    .card-stijl {
+        @extend .card-holland;
+        border-left: 8px solid var(--ho-stijl-red);
+        border-top: 4px solid var(--ho-stijl-blue);
+    }
+
+    .card-rietveld {
+        @extend .card-holland;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg,
+                var(--ho-rietveld-red) 0%,
+                var(--ho-rietveld-red) 33%,
+                var(--ho-rietveld-blue) 33%,
+                var(--ho-rietveld-blue) 66%,
+                var(--ho-rietveld-yellow) 66%,
+                var(--ho-rietveld-yellow) 100%
+            );
+        }
+    }
+
+    .card-memphis {
+        border: 4px solid var(--ho-stijl-black);
+        border-radius: var(--ho-radius-lg);
+        background: linear-gradient(135deg, var(--ho-memphis-lime), var(--ho-memphis-cyan));
+        box-shadow:
+            6px 6px 0 var(--ho-memphis-pink),
+            12px 12px 0 var(--ho-stijl-black);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translate(-2px, -2px);
+            box-shadow:
+                8px 8px 0 var(--ho-memphis-pink),
+                16px 16px 0 var(--ho-stijl-black);
+        }
+    }
+
+    // ========================================================================
+    // Badge Components
+    // ========================================================================
+
+    .badge-holland {
+        font-family: var(--ho-font-modern);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: var(--ho-space-sm) var(--ho-space-md);
+        border-radius: var(--ho-radius-geometric);
+        border: 2px solid var(--ho-stijl-black);
+    }
+
+    .badge-stijl { @extend .badge-holland; background-color: var(--ho-stijl-red); color: var(--ho-stijl-white); }
+    .badge-bauhaus { @extend .badge-holland; background-color: var(--ho-bauhaus-blue); color: var(--ho-stijl-white); }
+    .badge-memphis { @extend .badge-holland; background-color: var(--ho-memphis-pink); color: var(--ho-stijl-white); }
+
+    // ========================================================================
+    // Alert Components
+    // ========================================================================
+
+    .alert-holland {
+        border: 3px solid var(--ho-stijl-black);
+        border-radius: var(--ho-radius-geometric);
+        border-left-width: 8px;
+        padding: var(--ho-space-lg);
+        font-family: var(--ho-font-geometric);
+
+        &.alert-success {
+            background-color: var(--ho-success);
+            border-left-color: darken(#06D6A0, 20%);
+        }
+
+        &.alert-warning {
+            background-color: var(--ho-warning);
+            border-left-color: darken(#FFB703, 20%);
+        }
+
+        &.alert-danger {
+            background-color: var(--ho-danger);
+            border-left-color: darken(#E63946, 20%);
+            color: var(--ho-stijl-white);
+        }
+
+        &.alert-info {
+            background-color: var(--ho-info);
+            border-left-color: darken(#00B4D8, 20%);
+        }
+    }
+
+    // ========================================================================
+    // Utility Classes
+    // ========================================================================
+
+    // Text Colors
+    .text-holland-red { color: var(--ho-stijl-red) !important; }
+    .text-holland-blue { color: var(--ho-stijl-blue) !important; }
+    .text-holland-yellow { color: var(--ho-stijl-yellow) !important; }
+    .text-holland-orange { color: var(--ho-orange) !important; }
+
+    // Borders
+    .border-holland {
+        border: 3px solid var(--ho-stijl-black) !important;
+    }
+
+    .border-holland-red { border-color: var(--ho-stijl-red) !important; }
+    .border-holland-blue { border-color: var(--ho-stijl-blue) !important; }
+    .border-holland-yellow { border-color: var(--ho-stijl-yellow) !important; }
+
+    .border-geometric {
+        border-radius: var(--ho-radius-geometric) !important;
+    }
+
+    // Shadows
+    .shadow-holland { box-shadow: var(--ho-shadow-geometric) !important; }
+    .shadow-holland-hover:hover { box-shadow: var(--ho-shadow-geometric) !important; }
+
+    // Geometric Shapes
+    .shape-square {
+        aspect-ratio: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shape-rectangle {
+        aspect-ratio: 16/9;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shape-circle {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // ========================================================================
+    // Grid System - Modular Design
+    // ========================================================================
+
+    .grid-holland {
+        display: grid;
+        gap: var(--ho-space-lg);
+
+        &.grid-2 { grid-template-columns: repeat(2, 1fr); }
+        &.grid-3 { grid-template-columns: repeat(3, 1fr); }
+        &.grid-4 { grid-template-columns: repeat(4, 1fr); }
+        &.grid-mondrian {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            grid-gap: 4px;
+            background-color: var(--ho-stijl-black);
+        }
+    }
+
+    // ========================================================================
+    // Page Wrapper Override - Modernist Layout
+    // ========================================================================
+
+    #page-wrapper {
+        position: relative;
+
+        // Remove default backgrounds
+        &:before,
+        &:after {
+            display: none;
+        }
+
+        // Create new geometric background
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(135deg,
+                var(--ho-stijl-red) 0%,
+                var(--ho-stijl-red) 30%,
+                var(--ho-rietveld-blue) 30%,
+                var(--ho-rietveld-blue) 60%,
+                var(--ho-stijl-yellow) 60%,
+                var(--ho-stijl-yellow) 100%
+            );
+            z-index: -1;
+            display: block !important;
+        }
+
+        // Add geometric accent
+        &::after {
+            content: '';
+            position: absolute;
+            top: 150px;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            background-color: var(--ho-memphis-pink);
+            border: 4px solid var(--ho-stijl-black);
+            transform: rotate(45deg);
+            z-index: -1;
+            display: block !important;
+        }
+
+        .pagebg {
+            background-color: var(--ho-neutral-100);
+            background-image:
+                linear-gradient(0deg, var(--ho-neutral-300) 1px, transparent 1px),
+                linear-gradient(90deg, var(--ho-neutral-300) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    }
+
+    // Page wrapper for specific layouts
+    &.path-mod #page-wrapper,
+    &.path-course-view #page-wrapper {
+        &::before {
+            height: 120px;
+            background: var(--ho-canal-blue);
+        }
+
+        &::after {
+            top: 80px;
+            width: 80px;
+            height: 80px;
+            background-color: var(--ho-orange);
+        }
+    }
+
+    // ========================================================================
+    // Navigation Override
+    // ========================================================================
+
+    .navbar {
+        border-bottom: 4px solid var(--ho-stijl-black);
+        box-shadow: var(--ho-shadow-geometric);
+
+        .nav-link {
+            font-family: var(--ho-font-modern);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                color: var(--ho-stijl-red) !important;
+            }
+        }
+    }
+
+    // ========================================================================
+    // Form Elements - Modernist Style
+    // ========================================================================
+
+    .form-control-holland {
+        border: 2px solid var(--ho-stijl-black);
+        border-radius: var(--ho-radius-geometric);
+        padding: var(--ho-space-md);
+        font-family: var(--ho-font-geometric);
+        transition: all 0.2s ease;
+
+        &:focus {
+            border-color: var(--ho-rietveld-blue);
+            box-shadow: 4px 4px 0 var(--ho-stijl-blue);
+            outline: none;
+        }
+    }
+
+    .form-label-holland {
+        font-family: var(--ho-font-modern);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.875rem;
+        color: var(--ho-stijl-black);
+        margin-bottom: var(--ho-space-sm);
+    }
+
+    // ========================================================================
+    // Table Styling - Grid-based
+    // ========================================================================
+
+    .table-holland {
+        border: 3px solid var(--ho-stijl-black);
+        border-collapse: separate;
+        border-spacing: 0;
+
+        thead {
+            background-color: var(--ho-stijl-red);
+            color: var(--ho-stijl-white);
+
+            th {
+                border-bottom: 3px solid var(--ho-stijl-black);
+                padding: var(--ho-space-md);
+                font-family: var(--ho-font-modern);
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+        }
+
+        tbody {
+            tr {
+                transition: all 0.2s ease;
+
+                &:nth-child(even) {
+                    background-color: var(--ho-neutral-100);
+                }
+
+                &:hover {
+                    background-color: var(--ho-stijl-yellow);
+                    transform: translateX(4px);
+                }
+
+                td {
+                    border-bottom: 1px solid var(--ho-neutral-300);
+                    padding: var(--ho-space-md);
+                }
+            }
+        }
+    }
+
+    // ========================================================================
+    // Animations - Geometric Transitions
+    // ========================================================================
+
+    @keyframes slideInGeometric {
+        from {
+            transform: translateX(-100%) rotate(-5deg);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0) rotate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes rotateGeometric {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseHolland {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    .animate-slide-in {
+        animation: slideInGeometric 0.6s ease-out;
+    }
+
+    .animate-rotate {
+        animation: rotateGeometric 2s linear infinite;
+    }
+
+    .animate-pulse-holland {
+        animation: pulseHolland 2s ease-in-out infinite;
+    }
+
+    // ========================================================================
+    // Drawer Overrides
+    // ========================================================================
+
+    .drawer {
+        border: 3px solid var(--ho-stijl-black) !important;
+        box-shadow: var(--ho-shadow-geometric) !important;
+        background: var(--ho-stijl-white) !important;
+
+        .drawer-header {
+            background-color: var(--ho-rietveld-blue);
+            color: var(--ho-stijl-white);
+            border-bottom: 3px solid var(--ho-stijl-black);
+            padding: var(--ho-space-lg);
+            font-family: var(--ho-font-modern);
+            font-weight: 700;
+        }
+    }
+
+    // ========================================================================
+    // Footer Styling
+    // ========================================================================
+
+    footer {
+        background: linear-gradient(90deg,
+            var(--ho-stijl-red) 0%,
+            var(--ho-stijl-red) 25%,
+            var(--ho-stijl-blue) 25%,
+            var(--ho-stijl-blue) 50%,
+            var(--ho-stijl-yellow) 50%,
+            var(--ho-stijl-yellow) 75%,
+            var(--ho-stijl-black) 75%,
+            var(--ho-stijl-black) 100%
+        );
+        padding: var(--ho-space-2xl) 0 var(--ho-space-sm);
+        color: var(--ho-stijl-white);
+        border-top: 4px solid var(--ho-stijl-black);
+
+        a {
+            color: var(--ho-stijl-white);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                display: inline-block;
+            }
+        }
+        .footer-dark {
+            background-color: transparent !important;
+        }
+    }
+
+    // ========================================================================
+    // Responsive Overrides
+    // ========================================================================
+
+    @media (max-width: 768px) {
+        #page-wrapper {
+            &::before {
+                height: 100px;
+            }
+
+            &::after {
+                width: 60px;
+                height: 60px;
+                top: 70px;
+            }
+        }
+
+        .grid-holland {
+            &.grid-2,
+            &.grid-3,
+            &.grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+// ============================================================================
+// End Holland Theme
+// ============================================================================
