@@ -1,0 +1,1098 @@
+// ============================================================================
+// Holland Controls - Tactile Interface System
+// Neumorphic hardware-inspired components meeting Dutch Modernism
+// ============================================================================
+
+.holland {
+
+    // ========================================================================
+    // Control Surface Variables
+    // ========================================================================
+
+    // Surface Colors (warm industrial tones)
+    --ho-surface: #ececec;
+    --ho-surface-raised: #f4f4f4;
+    --ho-surface-sunken: #e0e0e0;
+    --ho-surface-deep: #d4d4d4;
+    --ho-surface-dark: #222;
+    --ho-surface-mid: #6a6a6a;
+    --ho-surface-muted: #aaa;
+
+    // Accent (Dutch orange meets openai warmth)
+    --ho-accent: #FF6B35;
+    --ho-accent-glow: rgba(255, 107, 53, 0.6);
+    --ho-accent-dim: rgba(255, 107, 53, 0.15);
+
+    // Signal Colors (indicator LEDs)
+    --ho-signal-on: #06D6A0;
+    --ho-signal-warn: #FFB703;
+    --ho-signal-off: rgba(0, 0, 0, 0.1);
+    --ho-signal-hot: #E63946;
+
+    // Neumorphic Shadow Layers
+    --ho-neo-raised:
+        rgb(255, 255, 255) 1px 1px 1px 0px inset,
+        rgba(0, 0, 0, 0.15) -1px -1px 1px 0px inset,
+        rgba(0, 0, 0, 0.26) 0.45px 0.45px 0.63px -1px,
+        rgba(0, 0, 0, 0.25) 1.2px 1.2px 1.7px -1.5px,
+        rgba(0, 0, 0, 0.23) 2.66px 2.66px 3.76px -2.25px,
+        rgba(0, 0, 0, 0.19) 5.9px 5.9px 8.35px -3px,
+        rgba(0, 0, 0, 0.06) 10px 10px 21.2px -3.75px,
+        -0.5px -0.5px 0 0 rgba(0, 0, 0, 0.05);
+
+    --ho-neo-pressed:
+        inset 0.5px 0.5px 1px #fff,
+        inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.15),
+        0.22px 0.22px 0.31px -0.5px rgba(0, 0, 0, 0.2),
+        0.6px 0.6px 0.86px -1px rgba(0, 0, 0, 0.18),
+        1.33px 1.33px 1.88px -1.5px rgba(0, 0, 0, 0.25),
+        2.95px 2.95px 4.17px -2px rgba(0, 0, 0, 0.1),
+        -0.5px -0.5px 0 0 rgba(0, 0, 0, 0.1);
+
+    --ho-neo-inset:
+        rgba(0, 0, 0, 0.15) 0px 1px 2px 0px inset,
+        rgba(0, 0, 0, 0.08) 1px -2px 2px 0px inset;
+
+    // Control transitions
+    --ho-transition-snap: 0.15s ease;
+    --ho-transition-smooth: 0.3s ease;
+    --ho-transition-slide: 0.25s ease;
+
+    // ========================================================================
+    // Control Button - Tactile Push Buttons
+    // ========================================================================
+
+    .ctrl-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: var(--ho-radius-md);
+        padding: 12px 20px;
+        background: var(--ho-surface-raised);
+        box-shadow: var(--ho-neo-raised);
+        font-family: var(--ho-font-modern);
+        font-weight: 600;
+        font-size: 0.875rem;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--ho-stijl-black);
+        cursor: pointer;
+        user-select: none;
+        transition: box-shadow var(--ho-transition-smooth),
+                    transform var(--ho-transition-snap);
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+
+        &:active,
+        &[data-active] {
+            box-shadow: var(--ho-neo-pressed);
+            transform: translateY(0);
+        }
+
+        &[disabled],
+        &[data-disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    // Primary — Holland accent orange
+    .ctrl-btn-primary {
+        @extend .ctrl-btn;
+        background: var(--ho-accent);
+        color: #fff;
+        box-shadow:
+            inset 1px 1px 1px rgba(255, 255, 255, 0.5),
+            inset -1px -1px 1px rgba(0, 0, 0, 0.23),
+            0.45px 0.45px 0.63px -1px rgba(0, 0, 0, 0.26),
+            1.2px 1.2px 1.7px -1.5px rgba(0, 0, 0, 0.25),
+            2.66px 2.66px 3.76px -2.25px rgba(0, 0, 0, 0.23),
+            5.9px 5.9px 8.35px -3px rgba(0, 0, 0, 0.19),
+            10px 10px 21.2px -3.75px rgba(0, 0, 0, 0.23),
+            -0.5px -0.5px rgba(149, 43, 0, 0.5);
+
+        &:active,
+        &[data-active] {
+            box-shadow:
+                inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.6),
+                inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.35),
+                0.22px 0.22px 0.31px -1px rgba(0, 0, 0, 0.2),
+                -0.5px -0.5px rgba(0, 0, 0, 0.13);
+        }
+    }
+
+    // De Stijl Red — hard edge, geometric
+    .ctrl-btn-stijl {
+        @extend .ctrl-btn;
+        background: var(--ho-stijl-red);
+        color: var(--ho-stijl-white);
+        border-radius: var(--ho-radius-geometric);
+        box-shadow:
+            inset 1px 1px 1px rgba(255, 255, 255, 0.4),
+            inset -1px -1px 1px rgba(0, 0, 0, 0.2),
+            4px 4px 0 var(--ho-stijl-black);
+
+        &:active,
+        &[data-active] {
+            box-shadow:
+                inset 1px 1px 2px rgba(0, 0, 0, 0.3),
+                1px 1px 0 var(--ho-stijl-black);
+            transform: translate(2px, 2px);
+        }
+    }
+
+    // Canal blue — deep and solid
+    .ctrl-btn-canal {
+        @extend .ctrl-btn;
+        background: var(--ho-canal-blue);
+        color: #fff;
+        box-shadow:
+            inset 1px 1px 1px rgba(255, 255, 255, 0.35),
+            inset -1px -1px 1px rgba(0, 0, 0, 0.23),
+            0.45px 0.45px 0.63px -1px rgba(0, 0, 0, 0.26),
+            1.2px 1.2px 1.7px -1.5px rgba(0, 0, 0, 0.25),
+            5.9px 5.9px 8.35px -3px rgba(0, 0, 0, 0.25),
+            -0.5px -0.5px rgba(0, 0, 0, 0.4);
+
+        &:active,
+        &[data-active] {
+            box-shadow:
+                inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.3),
+                inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.4),
+                -0.5px -0.5px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    // Dark — console/equipment aesthetic
+    .ctrl-btn-dark {
+        @extend .ctrl-btn;
+        background: var(--ho-surface-dark);
+        color: #fff;
+        box-shadow:
+            inset 1px 1px 1px rgba(255, 255, 255, 0.12),
+            inset -1px -1px 1px rgba(0, 0, 0, 0.5),
+            0.45px 0.45px 0.63px -0.75px rgba(0, 0, 0, 0.26),
+            1.2px 1.2px 1.7px -1.5px rgba(0, 0, 0, 0.25),
+            5.9px 5.9px 8.35px -3px rgba(0, 0, 0, 0.19),
+            14px 14px 21.2px -3.75px rgba(0, 0, 0, 0.2),
+            -0.5px -0.5px rgba(0, 0, 0, 0.7);
+
+        &:active,
+        &[data-active] {
+            box-shadow:
+                inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.1),
+                inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.6),
+                -0.5px -0.5px rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    // Block-level variant
+    .ctrl-btn-block {
+        width: 100%;
+    }
+
+    // Button group — row of tactile buttons
+    .ctrl-btn-group {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+
+        .ctrl-btn {
+            flex: 1;
+            min-width: 0;
+        }
+    }
+
+    // ========================================================================
+    // LED Indicator — Signal Lights
+    // ========================================================================
+
+    .ctrl-led {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: var(--ho-signal-off);
+        box-shadow:
+            inset 1px 1px 2px rgba(0, 0, 0, 0.1),
+            0 1px 0 0 rgba(255, 255, 255, 0.2);
+        transition: background-color var(--ho-transition-snap),
+                    box-shadow var(--ho-transition-snap);
+        flex-shrink: 0;
+
+        &[data-state="on"],
+        &.is-on {
+            background-color: var(--ho-signal-on);
+            box-shadow:
+                inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                0 0 6px rgba(6, 214, 160, 0.5);
+        }
+
+        &[data-state="warn"],
+        &.is-warn {
+            background-color: var(--ho-signal-warn);
+            box-shadow:
+                inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                0 0 6px rgba(255, 183, 3, 0.5);
+        }
+
+        &[data-state="hot"],
+        &.is-hot {
+            background-color: var(--ho-signal-hot);
+            box-shadow:
+                inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                0 0 6px rgba(230, 57, 70, 0.5);
+        }
+
+        &[data-state="accent"],
+        &.is-accent {
+            background-color: var(--ho-accent);
+            box-shadow:
+                inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                0 0 6px var(--ho-accent-glow);
+        }
+    }
+
+    .ctrl-led-lg {
+        @extend .ctrl-led;
+        width: 12px;
+        height: 12px;
+    }
+
+    // Pulsing LED animation
+    .ctrl-led-pulse {
+        animation: ledPulse 1.4s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+    }
+
+    @keyframes ledPulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+    }
+
+    // ========================================================================
+    // Toggle Switch — Track & Thumb
+    // ========================================================================
+
+    .ctrl-switch {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 26px;
+        border-radius: 100px;
+        background: rgba(0, 0, 0, 0.08);
+        box-shadow:
+            inset 0 1px 2px rgba(0, 0, 0, 0.15),
+            0 1px 0 0 rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: background-color var(--ho-transition-slide);
+        user-select: none;
+
+        &[data-state="on"],
+        &.is-on {
+            background: var(--ho-accent);
+        }
+
+        &[data-state="stijl"] {
+            background: var(--ho-stijl-red);
+        }
+
+        &[data-state="canal"] {
+            background: var(--ho-canal-blue);
+        }
+    }
+
+    .ctrl-switch-thumb {
+        display: block;
+        position: absolute;
+        top: 2.5px;
+        left: 2px;
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+        background: var(--ho-surface-raised);
+        box-shadow:
+            inset 1px 1px 1px #fff,
+            inset -1px -1px 0px rgba(0, 0, 0, 0.1),
+            0.45px 0.45px 0.63px -0.75px rgba(0, 0, 0, 0.26),
+            1.2px 1.2px 1.7px -1.5px rgba(0, 0, 0, 0.25),
+            2.66px 2.66px 3.76px -2.25px rgba(0, 0, 0, 0.23),
+            5.9px 5.9px 8.35px -3px rgba(0, 0, 0, 0.19),
+            10px 10px 21.2px -3.75px rgba(0, 0, 0, 0.06);
+        transition: transform var(--ho-transition-slide);
+        will-change: transform;
+
+        .ctrl-switch[data-state="on"] &,
+        .ctrl-switch.is-on &,
+        .ctrl-switch[data-state="stijl"] &,
+        .ctrl-switch[data-state="canal"] & {
+            transform: translateX(19px);
+        }
+    }
+
+    // ========================================================================
+    // Control Panel — Container Surface
+    // ========================================================================
+
+    .ctrl-panel {
+        background: var(--ho-surface);
+        border-radius: var(--ho-radius-lg);
+        padding: var(--ho-space-xl);
+        box-shadow: var(--ho-neo-inset);
+
+        &.ctrl-panel-raised {
+            box-shadow: var(--ho-neo-raised);
+            background: var(--ho-surface-raised);
+        }
+
+        &.ctrl-panel-geometric {
+            border-radius: var(--ho-radius-geometric);
+            border: 3px solid var(--ho-stijl-black);
+        }
+    }
+
+    // Panel header — label strip on a control surface
+    .ctrl-panel-header {
+        font-family: var(--ho-font-modern);
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--ho-neutral-600);
+        padding-bottom: var(--ho-space-sm);
+        margin-bottom: var(--ho-space-md);
+        border-bottom: 1px solid var(--ho-neutral-300);
+    }
+
+    // Panel with stijl accent strip
+    .ctrl-panel-stijl {
+        @extend .ctrl-panel;
+        border-radius: var(--ho-radius-geometric);
+        border-top: 4px solid var(--ho-stijl-red);
+        border-left: 4px solid var(--ho-stijl-blue);
+    }
+
+    // ========================================================================
+    // Knob / Dial — Rotary Control
+    // ========================================================================
+
+    .ctrl-knob {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--ho-surface-raised);
+        box-shadow:
+            inset 1px 1px 2px rgba(255, 255, 255, 0.8),
+            inset -1px -1px 2px rgba(0, 0, 0, 0.1),
+            0.45px 0.45px 0.63px -0.75px rgba(0, 0, 0, 0.2),
+            1.2px 1.2px 1.7px -1.5px rgba(0, 0, 0, 0.18),
+            2.66px 2.66px 3.76px -2.25px rgba(0, 0, 0, 0.15),
+            5.9px 5.9px 8.35px -3px rgba(0, 0, 0, 0.12);
+        cursor: grab;
+        transition: box-shadow var(--ho-transition-smooth);
+
+        // Indicator notch
+        &::after {
+            content: '';
+            display: block;
+            width: 3px;
+            height: 10px;
+            background: var(--ho-neutral-700);
+            border-radius: 2px;
+            transform: translateY(-6px);
+        }
+
+        &:active {
+            cursor: grabbing;
+            box-shadow:
+                inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.6),
+                inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.15),
+                1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .ctrl-knob-lg {
+        @extend .ctrl-knob;
+        width: 64px;
+        height: 64px;
+
+        &::after {
+            height: 14px;
+            transform: translateY(-8px);
+        }
+    }
+
+    .ctrl-knob-accent {
+        @extend .ctrl-knob;
+        border: 2px solid var(--ho-accent);
+
+        &::after {
+            background: var(--ho-accent);
+        }
+    }
+
+    // ========================================================================
+    // Slider Track — Linear Fader
+    // ========================================================================
+
+    .ctrl-slider-track {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        border-radius: 100px;
+        background: var(--ho-surface-sunken);
+        box-shadow:
+            inset 0 1px 2px rgba(0, 0, 0, 0.12),
+            0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .ctrl-slider-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 100px;
+        background: var(--ho-accent);
+        transition: width var(--ho-transition-smooth);
+    }
+
+    .ctrl-slider-fill-stijl {
+        @extend .ctrl-slider-fill;
+        background: linear-gradient(90deg,
+            var(--ho-stijl-red),
+            var(--ho-stijl-blue));
+    }
+
+    .ctrl-slider-fill-rietveld {
+        @extend .ctrl-slider-fill;
+        background: linear-gradient(90deg,
+            var(--ho-rietveld-red),
+            var(--ho-rietveld-yellow),
+            var(--ho-rietveld-blue));
+    }
+
+    .ctrl-slider-thumb {
+        position: absolute;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--ho-surface-raised);
+        transform: translate(-50%, -50%);
+        box-shadow:
+            inset 1px 1px 1px #fff,
+            inset -1px -1px 0px rgba(0, 0, 0, 0.08),
+            0.45px 0.45px 0.63px -0.75px rgba(0, 0, 0, 0.2),
+            1.2px 1.2px 1.7px -1.5px rgba(0, 0, 0, 0.18),
+            2.66px 2.66px 3.76px -2.25px rgba(0, 0, 0, 0.15);
+        cursor: grab;
+        transition: box-shadow var(--ho-transition-snap);
+
+        &:active {
+            cursor: grabbing;
+            box-shadow:
+                inset 0.5px 0.5px 1px #fff,
+                inset -0.5px -0.5px 1px rgba(0, 0, 0, 0.12),
+                0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    // ========================================================================
+    // Meter / VU Display — Level Indicator
+    // ========================================================================
+
+    .ctrl-meter {
+        display: flex;
+        gap: 3px;
+        align-items: flex-end;
+        height: 40px;
+        padding: 4px;
+        background: var(--ho-surface-dark);
+        border-radius: var(--ho-radius-sm);
+        box-shadow:
+            inset 0 1px 3px rgba(0, 0, 0, 0.4),
+            0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .ctrl-meter-bar {
+        flex: 1;
+        min-width: 4px;
+        background: var(--ho-signal-on);
+        border-radius: 1px;
+        transition: height var(--ho-transition-snap);
+
+        &:nth-child(n+7) {
+            background: var(--ho-signal-warn);
+        }
+
+        &:nth-child(n+10) {
+            background: var(--ho-signal-hot);
+        }
+    }
+
+    // Horizontal variant
+    .ctrl-meter-h {
+        display: flex;
+        gap: 2px;
+        align-items: stretch;
+        width: 100%;
+        height: 8px;
+        padding: 2px;
+        background: var(--ho-surface-dark);
+        border-radius: 100px;
+        box-shadow:
+            inset 0 1px 3px rgba(0, 0, 0, 0.4),
+            0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .ctrl-meter-segment {
+        flex: 1;
+        border-radius: 1px;
+        background: var(--ho-signal-on);
+        transition: opacity var(--ho-transition-snap);
+
+        &[data-off] {
+            opacity: 0.15;
+        }
+
+        &[data-level="warn"] {
+            background: var(--ho-signal-warn);
+        }
+
+        &[data-level="hot"] {
+            background: var(--ho-signal-hot);
+        }
+    }
+
+    // ========================================================================
+    // Display Screen — Readout Panel
+    // ========================================================================
+
+    .ctrl-screen {
+        background: #1a1a2e;
+        color: var(--ho-signal-on);
+        font-family: 'Space Mono', 'Courier New', monospace;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        padding: var(--ho-space-md);
+        border-radius: var(--ho-radius-sm);
+        box-shadow:
+            inset 0 1px 4px rgba(0, 0, 0, 0.5),
+            inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+            0 1px 0 rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+
+        // Scanline effect
+
+    }
+
+    .ctrl-screen-warm {
+        @extend .ctrl-screen;
+        color: var(--ho-accent);
+        background: #1e1108;
+    }
+
+    .ctrl-screen-blue {
+        @extend .ctrl-screen;
+        color: var(--ho-memphis-cyan);
+        background: #0a1628;
+    }
+
+    .ctrl-screen-value {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+    }
+
+    .ctrl-screen-label {
+        font-size: 0.625rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        opacity: 0.6;
+    }
+
+    // ========================================================================
+    // Frosted Glass Bar — Floating Toolbar
+    // ========================================================================
+
+    .ctrl-glass-bar {
+        background: rgba(236, 236, 236, 0.7);
+        backdrop-filter: blur(2rem);
+        -webkit-backdrop-filter: blur(2rem);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: var(--ho-radius-lg);
+        padding: var(--ho-space-sm) var(--ho-space-md);
+        transition: border-color var(--ho-transition-smooth);
+
+        &.ctrl-glass-bar-dark {
+            background: rgba(20, 33, 61, 0.75);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: var(--ho-stijl-white);
+        }
+    }
+
+    .ctrl-glass-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        background: rgba(236, 236, 236, 0.7);
+        backdrop-filter: blur(2rem);
+        -webkit-backdrop-filter: blur(2rem);
+        border-top: 1px solid transparent;
+        padding: var(--ho-space-md) var(--ho-space-lg);
+        transition: border-color var(--ho-transition-smooth);
+
+        &[data-scrolled] {
+            border-top-color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    // ========================================================================
+    // Input Field — Inset Text Entry
+    // ========================================================================
+
+    .ctrl-input {
+        width: 100%;
+        border: none;
+        border-radius: var(--ho-radius-md);
+        padding: 10px 14px;
+        background: var(--ho-surface-raised);
+        box-shadow: var(--ho-neo-inset);
+        font-family: var(--ho-font-geometric);
+        font-size: 0.9375rem;
+        color: var(--ho-stijl-black);
+        transition: box-shadow var(--ho-transition-smooth);
+        outline: none;
+
+        &::placeholder {
+            color: var(--ho-neutral-500);
+        }
+
+        &:focus {
+            box-shadow:
+                var(--ho-neo-inset),
+                0 0 0 2px var(--ho-accent-dim),
+                0 0 0 3px var(--ho-accent);
+        }
+    }
+
+    .ctrl-input-geometric {
+        @extend .ctrl-input;
+        border-radius: var(--ho-radius-geometric);
+        border: 2px solid var(--ho-stijl-black);
+
+        &:focus {
+            border-color: var(--ho-rietveld-blue);
+            box-shadow: 3px 3px 0 var(--ho-stijl-blue);
+        }
+    }
+
+    .ctrl-textarea {
+        @extend .ctrl-input;
+        min-height: 100px;
+        resize: vertical;
+        line-height: 1.5;
+    }
+
+    // ========================================================================
+    // Label Strip — Equipment Markings
+    // ========================================================================
+
+    .ctrl-label {
+        display: inline-block;
+        font-family: var(--ho-font-modern);
+        font-weight: 700;
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--ho-neutral-700);
+    }
+
+    .ctrl-label-engraved {
+        @extend .ctrl-label;
+        color: var(--ho-neutral-500);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .ctrl-label-light {
+        @extend .ctrl-label;
+        color: var(--ho-neutral-400);
+    }
+
+    .ctrl-label-accent {
+        @extend .ctrl-label;
+        color: var(--ho-accent);
+    }
+
+    // ========================================================================
+    // Segmented Control — Tab Selector
+    // ========================================================================
+
+    .ctrl-segments {
+        display: inline-flex;
+        gap: 2px;
+        padding: 3px;
+        background: var(--ho-surface-sunken);
+        border-radius: var(--ho-radius-md);
+        box-shadow: var(--ho-neo-inset);
+    }
+
+    .ctrl-segment {
+        padding: 8px 16px;
+        border: none;
+        border-radius: calc(var(--ho-radius-md) - 1px);
+        background: transparent;
+        font-family: var(--ho-font-modern);
+        font-weight: 600;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--ho-neutral-600);
+        cursor: pointer;
+        transition: all var(--ho-transition-slide);
+        user-select: none;
+
+        &:hover {
+            color: var(--ho-stijl-black);
+        }
+
+        &[data-active],
+        &.is-active {
+            background: var(--ho-surface-raised);
+            color: var(--ho-stijl-black);
+            box-shadow: var(--ho-neo-raised);
+        }
+    }
+
+    // Stijl variant — geometric hard edges
+    .ctrl-segments-stijl {
+        @extend .ctrl-segments;
+        border-radius: var(--ho-radius-geometric);
+        border: 2px solid var(--ho-stijl-black);
+        background: var(--ho-stijl-white);
+
+        .ctrl-segment {
+            border-radius: 0;
+
+            &[data-active],
+            &.is-active {
+                background: var(--ho-stijl-red);
+                color: var(--ho-stijl-white);
+                box-shadow: none;
+            }
+        }
+    }
+
+    // ========================================================================
+    // Card — Neumorphic Content Container
+    // ========================================================================
+
+    .ctrl-card {
+        background: var(--ho-surface-raised);
+        border-radius: var(--ho-radius-lg);
+        box-shadow: var(--ho-neo-raised);
+        overflow: hidden;
+        transition: box-shadow var(--ho-transition-smooth),
+                    transform var(--ho-transition-smooth);
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                rgb(255, 255, 255) 1px 1px 1px 0px inset,
+                rgba(0, 0, 0, 0.15) -1px -1px 1px 0px inset,
+                rgba(0, 0, 0, 0.28) 0.5px 0.5px 0.7px -0.75px,
+                rgba(0, 0, 0, 0.25) 1.5px 1.5px 2px -1.5px,
+                rgba(0, 0, 0, 0.22) 3.5px 3.5px 5px -2.25px,
+                rgba(0, 0, 0, 0.18) 8px 8px 12px -3px,
+                rgba(0, 0, 0, 0.08) 14px 14px 28px -3.75px;
+        }
+    }
+
+    .ctrl-card-body {
+        padding: var(--ho-space-lg);
+    }
+
+    .ctrl-card-header {
+        padding: var(--ho-space-md) var(--ho-space-lg);
+        border-bottom: 1px solid var(--ho-neutral-200);
+        font-family: var(--ho-font-modern);
+        font-weight: 700;
+        font-size: 0.8125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--ho-neutral-700);
+    }
+
+    .ctrl-card-footer {
+        padding: var(--ho-space-md) var(--ho-space-lg);
+        border-top: 1px solid var(--ho-neutral-200);
+        background: var(--ho-surface);
+    }
+
+    // Mondrian card — geometric color blocks
+    .ctrl-card-mondrian {
+        @extend .ctrl-card;
+        border-radius: var(--ho-radius-geometric);
+        border: 3px solid var(--ho-stijl-black);
+
+        &:hover {
+            box-shadow: 6px 6px 0 var(--ho-stijl-black);
+            transform: translate(-2px, -2px);
+        }
+
+        .ctrl-card-header {
+            background: var(--ho-stijl-red);
+            color: var(--ho-stijl-white);
+            border-bottom: 3px solid var(--ho-stijl-black);
+        }
+    }
+
+    // ========================================================================
+    // Chip / Tag — Small Selectable Element
+    // ========================================================================
+
+    .ctrl-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 12px;
+        border-radius: 100px;
+        background: var(--ho-surface-raised);
+        box-shadow:
+            inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.6),
+            inset -0.5px -0.5px 0.5px rgba(0, 0, 0, 0.06),
+            0.3px 0.3px 0.4px rgba(0, 0, 0, 0.12),
+            0.8px 0.8px 1.1px rgba(0, 0, 0, 0.1);
+        font-family: var(--ho-font-modern);
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: 0.03em;
+        color: var(--ho-neutral-700);
+        cursor: pointer;
+        user-select: none;
+        transition: all var(--ho-transition-snap);
+
+        &:hover {
+            color: var(--ho-stijl-black);
+        }
+
+        &[data-active],
+        &.is-active {
+            background: var(--ho-accent);
+            color: #fff;
+            box-shadow:
+                inset 0.5px 0.5px 1px rgba(255, 255, 255, 0.3),
+                inset -0.5px -0.5px 0.5px rgba(0, 0, 0, 0.15),
+                0 0 8px var(--ho-accent-dim);
+        }
+    }
+
+    .ctrl-chip-stijl {
+        @extend .ctrl-chip;
+        border-radius: var(--ho-radius-geometric);
+        border: 2px solid var(--ho-stijl-black);
+
+        &[data-active],
+        &.is-active {
+            background: var(--ho-stijl-red);
+        }
+    }
+
+    // ========================================================================
+    // Progress Ring — Circular Indicator
+    // ========================================================================
+
+    .ctrl-ring {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: conic-gradient(
+            var(--ho-accent) calc(var(--progress, 0) * 1%),
+            var(--ho-surface-sunken) 0
+        );
+        box-shadow:
+            inset 0 1px 2px rgba(0, 0, 0, 0.1),
+            0 1px 0 rgba(255, 255, 255, 0.3);
+
+        &::after {
+            content: '';
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--ho-surface-raised);
+            box-shadow:
+                inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+                inset -1px -1px 1px rgba(0, 0, 0, 0.06);
+        }
+    }
+
+    .ctrl-ring-stijl {
+        @extend .ctrl-ring;
+        background: conic-gradient(
+            var(--ho-stijl-red) calc(var(--progress, 0) * 0.33%),
+            var(--ho-stijl-blue) calc(var(--progress, 0) * 0.33%),
+            var(--ho-stijl-blue) calc(var(--progress, 0) * 0.66%),
+            var(--ho-stijl-yellow) calc(var(--progress, 0) * 0.66%),
+            var(--ho-stijl-yellow) calc(var(--progress, 0) * 1%),
+            var(--ho-surface-sunken) 0
+        );
+    }
+
+    // ========================================================================
+    // Divider — Section Separator
+    // ========================================================================
+
+    .ctrl-divider {
+        width: 100%;
+        height: 1px;
+        background: var(--ho-neutral-300);
+        margin: var(--ho-space-md) 0;
+    }
+
+    .ctrl-divider-groove {
+        @extend .ctrl-divider;
+        height: 2px;
+        background: transparent;
+        box-shadow:
+            0 -1px 0 var(--ho-neutral-300),
+            0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .ctrl-divider-stijl {
+        @extend .ctrl-divider;
+        height: 4px;
+        background: linear-gradient(90deg,
+            var(--ho-stijl-red) 0%,
+            var(--ho-stijl-red) 33%,
+            var(--ho-stijl-blue) 33%,
+            var(--ho-stijl-blue) 66%,
+            var(--ho-stijl-yellow) 66%,
+            var(--ho-stijl-yellow) 100%
+        );
+    }
+
+    // ========================================================================
+    // Tooltip — Equipment Annotation
+    // ========================================================================
+
+    .ctrl-tooltip {
+        position: relative;
+
+        &::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) translateY(4px);
+            padding: 6px 10px;
+            border-radius: var(--ho-radius-sm);
+            background: var(--ho-surface-dark);
+            color: #fff;
+            font-family: var(--ho-font-modern);
+            font-weight: 600;
+            font-size: 0.6875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--ho-transition-snap),
+                        transform var(--ho-transition-snap);
+        }
+
+        &:hover::before {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+
+    // ========================================================================
+    // Layout Utilities — Control Surface Arrangement
+    // ========================================================================
+
+    .ctrl-row {
+        display: flex;
+        align-items: center;
+        gap: var(--ho-space-md);
+    }
+
+    .ctrl-col {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ho-space-md);
+    }
+
+    .ctrl-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ctrl-between {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ctrl-gap-xs { gap: var(--ho-space-xs); }
+    .ctrl-gap-sm { gap: var(--ho-space-sm); }
+    .ctrl-gap-md { gap: var(--ho-space-md); }
+    .ctrl-gap-lg { gap: var(--ho-space-lg); }
+    .ctrl-gap-xl { gap: var(--ho-space-xl); }
+
+    // ========================================================================
+    // Animations — Hardware Motion
+    // ========================================================================
+
+    @keyframes ctrlFadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ctrlSlideUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+    }
+
+    @keyframes ctrlSpin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes ctrlBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    .ctrl-animate-in {
+        animation: ctrlFadeIn 0.4s ease-out;
+    }
+
+    .ctrl-animate-slide-up {
+        animation: ctrlSlideUp 0.3s ease-out;
+    }
+
+    .ctrl-animate-spin {
+        animation: ctrlSpin 1s linear infinite;
+    }
+
+    .ctrl-animate-blink {
+        animation: ctrlBlink 1s step-end infinite;
+    }
+}
+
+// ============================================================================
+// End Holland Controls
+// ============================================================================

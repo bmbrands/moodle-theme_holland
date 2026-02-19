@@ -36,12 +36,12 @@ $primarymenu = $primary->export_for_template($renderer);
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-// Render the two block regions.
-$fpbeforeblocks = $OUTPUT->blocks('fp-before');
-$hasfpbeforeblocks = (strpos($fpbeforeblocks, 'data-block=') !== false);
+// Render the two block regions using the proper API to detect content.
+$sidepreblocks = $OUTPUT->blocks('side-pre');
+$hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 
-$fpafterblocks = $OUTPUT->blocks('fp-after');
-$hasfpafterblocks = (strpos($fpafterblocks, 'data-block=') !== false);
+$sidepostblocks = $OUTPUT->blocks('side-post');
+$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 
 $addblockbutton = $OUTPUT->addblockbutton();
 
@@ -62,10 +62,10 @@ $templatecontext = [
     'langmenu' => $primarymenu['lang'],
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
-    'fpbeforeblocks' => $fpbeforeblocks,
-    'hasfpbeforeblocks' => $hasfpbeforeblocks,
-    'fpafterblocks' => $fpafterblocks,
-    'hasfpafterblocks' => $hasfpafterblocks,
+    'sidepreblocks' => $sidepreblocks,
+    'hassidepre' => $hassidepre,
+    'sidepostblocks' => $sidepostblocks,
+    'hassidepost' => $hassidepost,
     'holland' => [
         'hasfeaturedcourses' => $holland->hasfeaturedcourses(),
         'featuredcourses' => $holland->featuredcourses(),

@@ -1,20 +1,49 @@
 .coursebox .content .customfields-container {
      display: none;
 }
-.card-grid-container {
-    .card-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-     gap: 1rem;
-     margin-bottom: 2rem;
-          .card {
-               position: relative;
-               .dashboard-card-img {
-                    object-fit: cover;
-                    max-width: 100%;
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-               }
-          }
+
+.course-header-image {
+    .course-header-image-bg {
+        width: 200px;
+        height: 200px;
+        max-width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-left: auto;
+    }
+
+    .course-image-edit-button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        z-index: 1;
+    }
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    .card {
+        position: relative;
+        .dashboard-card-img {
+            object-fit: cover;
+            max-width: 100%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    }
+    .tiletext a::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: auto;
+        content: "";
+        background-color: rgba(0, 0, 0, 0);
     }
 }

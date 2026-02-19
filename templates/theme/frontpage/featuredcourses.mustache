@@ -43,14 +43,14 @@
     <h2 class="">{{#str}}featuredcourses, theme_holland{{/str}}</h2>
     <div class="card-grid">
         {{#holland.featuredcourses}}
-        <div class="card card-stijl dashboard-card">
+        <div class="card ctrl-card dashboard-card">
             <div class="dashboard-card-img" style="background-image: url('{{{imgurl}}}'); height: 10rem;"></div>
             <div class="card-body">
                 <h5 class="card-title">{{{title}}}</h5>
                 <p class="card-text">{{#shortentext}}250, {{{description}}} {{/shortentext}}</p>
             </div>
             <div class="card-footer roundedbottom">
-                <a href="{{{url}}}" class="btn btn-yellow stretched-link">{{#str}}continue{{/str}}</a>
+                <a href="{{{url}}}" class="btn btn-yellow stretched-link">{{#str}}view{{/str}}</a>
             </div>
         </div>
         {{/holland.featuredcourses}}

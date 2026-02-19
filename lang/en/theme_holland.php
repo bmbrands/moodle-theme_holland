@@ -37,3 +37,5 @@ $string['googlefont_desc'] = 'Select the Google Font to use as the primary displ
 $string['pluginname'] = 'Holland';
 $string['privacy:metadata'] = 'The Holland theme does not store any personal data.';
 $string['uploadimage'] = 'Upload image';
+$string['region-side-pre'] = 'Side pre';
+$string['region-side-post'] = 'Side post';

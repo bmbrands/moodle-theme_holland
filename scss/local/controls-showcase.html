@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holland Controls - Tactile Interface Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../style/moodle.css">
+    <style>
+        body {
+            background: #ececec;
+            background-image: linear-gradient(to bottom right, #f8f8f8, #ececec 20%);
+        }
+        .showcase-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow:
+                rgba(0,0,0,0.06) 0 2px 4px,
+                rgba(0,0,0,0.04) 0 8px 16px;
+        }
+        .showcase-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dee2e6;
+            letter-spacing: -0.02em;
+        }
+        .component-demo {
+            margin: 20px 0;
+            padding: 24px;
+            background: #ececec;
+            border-radius: 6px;
+            box-shadow:
+                inset 0 1px 2px rgba(0,0,0,0.06),
+                0 1px 0 rgba(255,255,255,0.5);
+        }
+        .component-label {
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            color: #6c757d;
+        }
+        .spacer { height: 16px; }
+        .dark-stage {
+            background: #222;
+            border-radius: 6px;
+            padding: 24px;
+        }
+    </style>
+</head>
+<body class="holland">
+    <div class="container py-5" style="max-width: 1100px;">
+
+        <!-- Header -->
+        <header class="text-center mb-5">
+            <h1 style="font-size: 3rem; font-weight: 700; letter-spacing: -0.03em;">Holland Controls</h1>
+            <p class="lead" style="color: #6c757d;">Tactile interface components — neumorphic hardware meets Dutch modernism</p>
+            <div class="ctrl-divider-stijl mx-auto mt-4" style="max-width: 300px;"></div>
+        </header>
+
+        <!-- ============================================================ -->
+        <!-- BUTTONS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Push Buttons</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Default &amp; Color Variants</div>
+                <div class="d-flex gap-3 flex-wrap align-items-center">
+                    <button class="ctrl-btn">Default</button>
+                    <button class="ctrl-btn-primary">Primary</button>
+                    <button class="ctrl-btn-stijl">De Stijl</button>
+                    <button class="ctrl-btn-canal">Canal Blue</button>
+                    <button class="ctrl-btn-dark">Dark</button>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">States</div>
+                <div class="d-flex gap-3 flex-wrap align-items-center">
+                    <button class="ctrl-btn">Normal</button>
+                    <button class="ctrl-btn" data-active>Pressed</button>
+                    <button class="ctrl-btn" data-disabled>Disabled</button>
+                    <button class="ctrl-btn-primary" data-active>Primary Pressed</button>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Button with LED Indicator</div>
+                <div class="d-flex gap-3 flex-wrap align-items-center">
+                    <button class="ctrl-btn">
+                        <span class="ctrl-led"></span>
+                        Idle
+                    </button>
+                    <button class="ctrl-btn" data-active>
+                        <span class="ctrl-led is-accent"></span>
+                        Active
+                    </button>
+                    <button class="ctrl-btn-primary">
+                        <span class="ctrl-led is-on"></span>
+                        Ready
+                    </button>
+                    <button class="ctrl-btn-dark">
+                        <span class="ctrl-led is-hot"></span>
+                        Recording
+                    </button>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Block Button &amp; Button Group</div>
+                <button class="ctrl-btn-primary ctrl-btn-block mb-3">Full Width Primary</button>
+                <div class="ctrl-btn-group" style="max-width: 500px;">
+                    <button class="ctrl-btn" data-active>
+                        <span class="ctrl-led is-accent"></span> Option A
+                    </button>
+                    <button class="ctrl-btn">
+                        <span class="ctrl-led"></span> Option B
+                    </button>
+                    <button class="ctrl-btn">
+                        <span class="ctrl-led"></span> Option C
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- LED INDICATORS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">LED Signal Indicators</h2>
+
+            <div class="component-demo">
+                <div class="component-label">States</div>
+                <div class="d-flex gap-4 flex-wrap align-items-center">
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led"></span>
+                        <span class="ctrl-label">Off</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led is-on"></span>
+                        <span class="ctrl-label">On</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led is-warn"></span>
+                        <span class="ctrl-label">Warn</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led is-hot"></span>
+                        <span class="ctrl-label">Hot</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led is-accent"></span>
+                        <span class="ctrl-label">Accent</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Sizes &amp; Pulsing</div>
+                <div class="d-flex gap-4 flex-wrap align-items-center">
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led is-on"></span>
+                        <span class="ctrl-label">Small</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led-lg is-on"></span>
+                        <span class="ctrl-label">Large</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led-lg is-hot ctrl-led-pulse"></span>
+                        <span class="ctrl-label">Pulsing</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led-lg is-accent ctrl-led-pulse"></span>
+                        <span class="ctrl-label">Pulsing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Status Row Example</div>
+                <div class="ctrl-row ctrl-gap-lg">
+                    <div class="ctrl-row ctrl-gap-xs">
+                        <span class="ctrl-led is-on"></span>
+                        <span class="ctrl-label">Network</span>
+                    </div>
+                    <div class="ctrl-row ctrl-gap-xs">
+                        <span class="ctrl-led is-on"></span>
+                        <span class="ctrl-label">Database</span>
+                    </div>
+                    <div class="ctrl-row ctrl-gap-xs">
+                        <span class="ctrl-led is-warn"></span>
+                        <span class="ctrl-label">Cache</span>
+                    </div>
+                    <div class="ctrl-row ctrl-gap-xs">
+                        <span class="ctrl-led is-hot"></span>
+                        <span class="ctrl-label">CPU</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TOGGLE SWITCHES -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Toggle Switches</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Switch States</div>
+                <div class="d-flex gap-5 flex-wrap align-items-center">
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-switch">
+                            <span class="ctrl-switch-thumb"></span>
+                        </div>
+                        <span class="ctrl-label">Off</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-switch is-on">
+                            <span class="ctrl-switch-thumb"></span>
+                        </div>
+                        <span class="ctrl-label">Accent</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-switch" data-state="stijl">
+                            <span class="ctrl-switch-thumb"></span>
+                        </div>
+                        <span class="ctrl-label">Stijl</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-switch" data-state="canal">
+                            <span class="ctrl-switch-thumb"></span>
+                        </div>
+                        <span class="ctrl-label">Canal</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Settings Row Pattern</div>
+                <div class="ctrl-col ctrl-gap-md" style="max-width: 400px;">
+                    <div class="ctrl-between">
+                        <span class="ctrl-label">Dark Mode</span>
+                        <div class="ctrl-switch is-on">
+                            <span class="ctrl-switch-thumb"></span>
+                        </div>
+                    </div>
+                    <div class="ctrl-divider-groove"></div>
+                    <div class="ctrl-between">
+                        <span class="ctrl-label">Notifications</span>
+                        <div class="ctrl-switch">
+                            <span class="ctrl-switch-thumb"></span>
+                        </div>
+                    </div>
+                    <div class="ctrl-divider-groove"></div>
+                    <div class="ctrl-between">
+                        <span class="ctrl-label">Auto-save</span>
+                        <div class="ctrl-switch" data-state="canal">
+                            <span class="ctrl-switch-thumb"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CONTROL PANELS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Control Panels</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Inset Panel (Default)</div>
+                <div class="ctrl-panel">
+                    <div class="ctrl-panel-header">System Status</div>
+                    <div class="ctrl-row ctrl-gap-lg mt-3">
+                        <div class="ctrl-row ctrl-gap-xs">
+                            <span class="ctrl-led is-on"></span>
+                            <span class="ctrl-label">Active</span>
+                        </div>
+                        <span class="ctrl-label-engraved">Uptime: 14d 6h</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Raised Panel</div>
+                <div class="ctrl-panel ctrl-panel-raised">
+                    <div class="ctrl-panel-header">Audio Controls</div>
+                    <div class="ctrl-row ctrl-gap-xl mt-3 flex-wrap">
+                        <div class="ctrl-col ctrl-gap-xs align-items-center">
+                            <div class="ctrl-knob" style="transform: rotate(-60deg);"></div>
+                            <span class="ctrl-label-engraved">Volume</span>
+                        </div>
+                        <div class="ctrl-col ctrl-gap-xs align-items-center">
+                            <div class="ctrl-knob" style="transform: rotate(30deg);"></div>
+                            <span class="ctrl-label-engraved">Bass</span>
+                        </div>
+                        <div class="ctrl-col ctrl-gap-xs align-items-center">
+                            <div class="ctrl-knob-accent" style="transform: rotate(90deg);"></div>
+                            <span class="ctrl-label-accent">Treble</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Geometric / Stijl Panel</div>
+                <div class="ctrl-panel-stijl">
+                    <div class="ctrl-panel-header">Course Metrics</div>
+                    <div class="ctrl-row ctrl-gap-lg mt-3 flex-wrap">
+                        <div class="ctrl-col ctrl-gap-xs">
+                            <span class="ctrl-label">Enrolled</span>
+                            <strong style="font-size: 1.5rem;">247</strong>
+                        </div>
+                        <div class="ctrl-col ctrl-gap-xs">
+                            <span class="ctrl-label">Active</span>
+                            <strong style="font-size: 1.5rem;">183</strong>
+                        </div>
+                        <div class="ctrl-col ctrl-gap-xs">
+                            <span class="ctrl-label">Completion</span>
+                            <strong style="font-size: 1.5rem;">74%</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- KNOBS & SLIDERS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Knobs &amp; Sliders</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Rotary Knobs</div>
+                <div class="d-flex gap-5 flex-wrap align-items-end">
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-knob" style="transform: rotate(-90deg);"></div>
+                        <span class="ctrl-label-engraved">Min</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-knob" style="transform: rotate(0deg);"></div>
+                        <span class="ctrl-label-engraved">Center</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-knob" style="transform: rotate(90deg);"></div>
+                        <span class="ctrl-label-engraved">Max</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-knob-lg" style="transform: rotate(45deg);"></div>
+                        <span class="ctrl-label-engraved">Large</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-knob-accent" style="transform: rotate(-30deg);"></div>
+                        <span class="ctrl-label-accent">Accent</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Slider Tracks</div>
+                <div class="ctrl-col ctrl-gap-lg" style="max-width: 500px;">
+                    <div>
+                        <div class="ctrl-between mb-2">
+                            <span class="ctrl-label">Volume</span>
+                            <span class="ctrl-label">72%</span>
+                        </div>
+                        <div class="ctrl-slider-track">
+                            <div class="ctrl-slider-fill" style="width: 72%;"></div>
+                            <div class="ctrl-slider-thumb" style="left: 72%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ctrl-between mb-2">
+                            <span class="ctrl-label">De Stijl Gradient</span>
+                            <span class="ctrl-label">45%</span>
+                        </div>
+                        <div class="ctrl-slider-track">
+                            <div class="ctrl-slider-fill-stijl" style="width: 45%;"></div>
+                            <div class="ctrl-slider-thumb" style="left: 45%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ctrl-between mb-2">
+                            <span class="ctrl-label">Rietveld Gradient</span>
+                            <span class="ctrl-label">88%</span>
+                        </div>
+                        <div class="ctrl-slider-track">
+                            <div class="ctrl-slider-fill-rietveld" style="width: 88%;"></div>
+                            <div class="ctrl-slider-thumb" style="left: 88%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- METERS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Meters &amp; Level Indicators</h2>
+
+            <div class="component-demo">
+                <div class="component-label">VU Meter (Vertical Bars)</div>
+                <div class="d-flex gap-4 flex-wrap align-items-end">
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-meter" style="width: 80px;">
+                            <div class="ctrl-meter-bar" style="height: 30%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 50%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 70%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 85%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 60%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 45%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 90%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 55%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 40%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 95%;"></div>
+                        </div>
+                        <span class="ctrl-label-engraved">Left</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-meter" style="width: 80px;">
+                            <div class="ctrl-meter-bar" style="height: 40%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 55%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 75%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 60%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 80%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 50%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 65%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 85%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 45%;"></div>
+                            <div class="ctrl-meter-bar" style="height: 70%;"></div>
+                        </div>
+                        <span class="ctrl-label-engraved">Right</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Horizontal Segmented Meters</div>
+                <div class="ctrl-col ctrl-gap-lg" style="max-width: 400px;">
+                    <div>
+                        <div class="ctrl-between mb-2">
+                            <span class="ctrl-label">CPU Load</span>
+                            <span class="ctrl-label">Normal</span>
+                        </div>
+                        <div class="ctrl-meter-h">
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment" data-off></div>
+                            <div class="ctrl-meter-segment" data-off></div>
+                            <div class="ctrl-meter-segment" data-off data-level="warn"></div>
+                            <div class="ctrl-meter-segment" data-off data-level="warn"></div>
+                            <div class="ctrl-meter-segment" data-off data-level="hot"></div>
+                            <div class="ctrl-meter-segment" data-off data-level="hot"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ctrl-between mb-2">
+                            <span class="ctrl-label">Memory</span>
+                            <span class="ctrl-label">Warning</span>
+                        </div>
+                        <div class="ctrl-meter-h">
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment" data-level="warn"></div>
+                            <div class="ctrl-meter-segment" data-level="warn"></div>
+                            <div class="ctrl-meter-segment" data-off data-level="hot"></div>
+                            <div class="ctrl-meter-segment" data-off data-level="hot"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ctrl-between mb-2">
+                            <span class="ctrl-label">Disk I/O</span>
+                            <span class="ctrl-label">Critical</span>
+                        </div>
+                        <div class="ctrl-meter-h">
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment"></div>
+                            <div class="ctrl-meter-segment" data-level="warn"></div>
+                            <div class="ctrl-meter-segment" data-level="warn"></div>
+                            <div class="ctrl-meter-segment" data-level="hot"></div>
+                            <div class="ctrl-meter-segment" data-level="hot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- DISPLAY SCREENS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Display Screens</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Screen Variants</div>
+                <div class="d-flex gap-3 flex-wrap">
+                    <div class="ctrl-screen position-relative" style="width: 200px; height: 120px;">
+                        <div class="ctrl-screen-label">System</div>
+                        <div class="ctrl-screen-value">OK</div>
+                        <div class="ctrl-screen-label mt-1">14:23:07 UTC</div>
+                    </div>
+                    <div class="ctrl-screen-warm position-relative" style="width: 200px; height: 120px;">
+                        <div class="ctrl-screen-label">Temperature</div>
+                        <div class="ctrl-screen-value">42.7°</div>
+                        <div class="ctrl-screen-label mt-1">Celsius</div>
+                    </div>
+                    <div class="ctrl-screen-blue position-relative" style="width: 200px; height: 120px;">
+                        <div class="ctrl-screen-label">Users Online</div>
+                        <div class="ctrl-screen-value">1,247</div>
+                        <div class="ctrl-screen-label mt-1">Peak: 2,048</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Terminal Screen</div>
+                <div class="ctrl-screen position-relative" style="max-width: 500px;">
+                    <div>> moodle status --verbose</div>
+                    <div style="opacity: 0.7;">Checking core subsystems...</div>
+                    <div><span style="color: #06D6A0;">✓</span> Database connection OK</div>
+                    <div><span style="color: #06D6A0;">✓</span> Cache store active</div>
+                    <div><span style="color: #FFB703;">⚠</span> Cron overdue by 12min</div>
+                    <div><span style="color: #06D6A0;">✓</span> File system writable</div>
+                    <div style="margin-top: 8px;">> <span class="ctrl-animate-blink">_</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- FROSTED GLASS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Frosted Glass Surfaces</h2>
+
+            <div class="component-demo" style="background: linear-gradient(135deg, #E63946 0%, #1D3557 50%, #F1C40F 100%); padding: 40px; border-radius: 8px;">
+                <div class="component-label" style="color: #fff;">Glass Bar (Light)</div>
+                <div class="ctrl-glass-bar mb-3">
+                    <div class="ctrl-row ctrl-gap-md">
+                        <button class="ctrl-btn" style="flex: 0;">Play</button>
+                        <button class="ctrl-btn" style="flex: 0;">Pause</button>
+                        <button class="ctrl-btn" style="flex: 0;">Stop</button>
+                        <div style="flex: 1;"></div>
+                        <span class="ctrl-led is-on"></span>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+
+                <div class="component-label" style="color: #fff;">Glass Bar (Dark)</div>
+                <div class="ctrl-glass-bar ctrl-glass-bar-dark">
+                    <div class="ctrl-row ctrl-gap-md">
+                        <span class="ctrl-label" style="color: rgba(255,255,255,0.7);">Holland Controls v1.0</span>
+                        <div style="flex: 1;"></div>
+                        <span class="ctrl-led is-accent ctrl-led-pulse"></span>
+                        <span class="ctrl-label" style="color: rgba(255,255,255,0.5);">Connected</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- INPUTS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Input Fields</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Neumorphic Inputs</div>
+                <div class="ctrl-col ctrl-gap-md" style="max-width: 400px;">
+                    <div>
+                        <div class="ctrl-label mb-2">Username</div>
+                        <input type="text" class="ctrl-input" placeholder="Enter your username">
+                    </div>
+                    <div>
+                        <div class="ctrl-label mb-2">Search</div>
+                        <input type="text" class="ctrl-input" placeholder="Search courses...">
+                    </div>
+                    <div>
+                        <div class="ctrl-label mb-2">Message</div>
+                        <textarea class="ctrl-textarea" placeholder="Write your message..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Geometric Inputs (Stijl)</div>
+                <div class="ctrl-col ctrl-gap-md" style="max-width: 400px;">
+                    <div>
+                        <div class="ctrl-label mb-2">Course Title</div>
+                        <input type="text" class="ctrl-input-geometric" placeholder="Enter course title">
+                    </div>
+                    <div>
+                        <div class="ctrl-label mb-2">Description</div>
+                        <input type="text" class="ctrl-input-geometric" placeholder="Brief description">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SEGMENTED CONTROLS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Segmented Controls</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Neumorphic Segments</div>
+                <div class="ctrl-segments">
+                    <button class="ctrl-segment is-active">All</button>
+                    <button class="ctrl-segment">Active</button>
+                    <button class="ctrl-segment">Archived</button>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">De Stijl Segments</div>
+                <div class="ctrl-segments-stijl">
+                    <button class="ctrl-segment">Overview</button>
+                    <button class="ctrl-segment is-active">Grades</button>
+                    <button class="ctrl-segment">Participants</button>
+                    <button class="ctrl-segment">Reports</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CARDS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Cards</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Neumorphic Card</div>
+                <div class="d-flex gap-4 flex-wrap">
+                    <div class="ctrl-card" style="width: 280px;">
+                        <div class="ctrl-card-header">Course Module</div>
+                        <div class="ctrl-card-body">
+                            <p style="margin: 0 0 12px;">Introduction to Dutch Design Principles — explore the legacy of De Stijl and Bauhaus movements.</p>
+                            <div class="ctrl-row ctrl-gap-sm">
+                                <span class="ctrl-chip is-active">Design</span>
+                                <span class="ctrl-chip">History</span>
+                            </div>
+                        </div>
+                        <div class="ctrl-card-footer">
+                            <div class="ctrl-between">
+                                <span class="ctrl-label">Progress</span>
+                                <div class="ctrl-row ctrl-gap-xs">
+                                    <span class="ctrl-led is-on"></span>
+                                    <span class="ctrl-label">67%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ctrl-card-mondrian" style="width: 280px;">
+                        <div class="ctrl-card-header">Assignment</div>
+                        <div class="ctrl-card-body">
+                            <p style="margin: 0 0 12px;">Create a composition using only primary colors, black lines, and white space.</p>
+                            <div class="ctrl-between">
+                                <span class="ctrl-label">Due: Mar 15</span>
+                                <span class="ctrl-chip-stijl is-active">Graded</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CHIPS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Chips &amp; Tags</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Pill Chips</div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="ctrl-chip">Mathematics</span>
+                    <span class="ctrl-chip is-active">Art History</span>
+                    <span class="ctrl-chip">Architecture</span>
+                    <span class="ctrl-chip">Typography</span>
+                    <span class="ctrl-chip is-active">Color Theory</span>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Stijl Chips (Geometric)</div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="ctrl-chip-stijl">Mondrian</span>
+                    <span class="ctrl-chip-stijl is-active">Rietveld</span>
+                    <span class="ctrl-chip-stijl">Van Doesburg</span>
+                    <span class="ctrl-chip-stijl">Huszár</span>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Chips with LEDs</div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="ctrl-chip">
+                        <span class="ctrl-led"></span> Offline
+                    </span>
+                    <span class="ctrl-chip is-active">
+                        <span class="ctrl-led is-on" style="box-shadow: none;"></span> Online
+                    </span>
+                    <span class="ctrl-chip">
+                        <span class="ctrl-led is-warn"></span> Away
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PROGRESS RINGS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Progress Rings</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Circular Indicators</div>
+                <div class="d-flex gap-5 flex-wrap align-items-center">
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-ring" style="--progress: 25;"></div>
+                        <span class="ctrl-label">25%</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-ring" style="--progress: 50;"></div>
+                        <span class="ctrl-label">50%</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-ring" style="--progress: 75;"></div>
+                        <span class="ctrl-label">75%</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-ring" style="--progress: 100;"></div>
+                        <span class="ctrl-label">100%</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-ring-stijl" style="--progress: 80;"></div>
+                        <span class="ctrl-label">Stijl 80%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- DIVIDERS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Dividers</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Standard</div>
+                <div class="ctrl-divider"></div>
+                <div class="spacer"></div>
+
+                <div class="component-label">Groove (Engraved)</div>
+                <div class="ctrl-divider-groove"></div>
+                <div class="spacer"></div>
+
+                <div class="component-label">De Stijl</div>
+                <div class="ctrl-divider-stijl"></div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- LABELS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Label Styles</h2>
+
+            <div class="component-demo">
+                <div class="d-flex gap-5 flex-wrap align-items-center">
+                    <div class="ctrl-col ctrl-gap-xs">
+                        <span class="ctrl-label">Standard</span>
+                        <span style="font-size: 0.8rem; color: #adb5bd;">.ctrl-label</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs">
+                        <span class="ctrl-label-engraved">Engraved</span>
+                        <span style="font-size: 0.8rem; color: #adb5bd;">.ctrl-label-engraved</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs">
+                        <span class="ctrl-label-light">Light</span>
+                        <span style="font-size: 0.8rem; color: #adb5bd;">.ctrl-label-light</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs">
+                        <span class="ctrl-label-accent">Accent</span>
+                        <span style="font-size: 0.8rem; color: #adb5bd;">.ctrl-label-accent</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TOOLTIPS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Tooltips</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Hover for Equipment Annotations</div>
+                <div class="d-flex gap-4 flex-wrap">
+                    <button class="ctrl-btn ctrl-tooltip" data-tooltip="Master Volume">
+                        <span class="ctrl-led is-on"></span> VOL
+                    </button>
+                    <button class="ctrl-btn-primary ctrl-tooltip" data-tooltip="Save Changes">
+                        SAVE
+                    </button>
+                    <button class="ctrl-btn-stijl ctrl-tooltip" data-tooltip="Emergency Stop">
+                        STOP
+                    </button>
+                    <div class="ctrl-knob ctrl-tooltip" data-tooltip="Gain Control" style="transform: rotate(30deg);"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ANIMATIONS -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Animations</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Motion Effects</div>
+                <div class="d-flex gap-5 flex-wrap align-items-center">
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <div class="ctrl-knob-accent ctrl-animate-spin" style="width: 36px; height: 36px;"></div>
+                        <span class="ctrl-label">Spin</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-led-lg is-hot ctrl-led-pulse"></span>
+                        <span class="ctrl-label">Pulse</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center">
+                        <span class="ctrl-animate-blink" style="font-size: 1.5rem; font-weight: 700;">▌</span>
+                        <span class="ctrl-label">Blink</span>
+                    </div>
+                    <div class="ctrl-col ctrl-gap-xs align-items-center ctrl-animate-in">
+                        <button class="ctrl-btn-primary">Fade In</button>
+                        <span class="ctrl-label">Animate In</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- COMPOSITE: MIXING DESK -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Composite Example — Mixing Desk</h2>
+
+            <div class="component-demo">
+                <div class="ctrl-panel ctrl-panel-raised">
+                    <div class="ctrl-between mb-3">
+                        <div class="ctrl-row ctrl-gap-sm">
+                            <span class="ctrl-led-lg is-on ctrl-led-pulse"></span>
+                            <span class="ctrl-panel-header" style="border: none; padding: 0; margin: 0;">Holland Audio Desk</span>
+                        </div>
+                        <div class="ctrl-segments">
+                            <button class="ctrl-segment is-active">Stereo</button>
+                            <button class="ctrl-segment">Mono</button>
+                            <button class="ctrl-segment">Surround</button>
+                        </div>
+                    </div>
+
+                    <div class="ctrl-divider-stijl mb-3"></div>
+
+                    <div class="d-flex gap-4 flex-wrap">
+                        <!-- Channel 1 -->
+                        <div class="ctrl-panel" style="flex: 1; min-width: 120px;">
+                            <div class="ctrl-label mb-3">CH 1</div>
+                            <div class="ctrl-col ctrl-gap-md align-items-center">
+                                <div class="ctrl-knob" style="transform: rotate(45deg);"></div>
+                                <div class="ctrl-slider-track" style="width: 80px;">
+                                    <div class="ctrl-slider-fill" style="width: 65%;"></div>
+                                </div>
+                                <div class="ctrl-meter" style="width: 40px; height: 60px;">
+                                    <div class="ctrl-meter-bar" style="height: 40%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 65%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 55%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 80%;"></div>
+                                </div>
+                                <div class="ctrl-between" style="width: 100%;">
+                                    <span class="ctrl-label-engraved">Mute</span>
+                                    <div class="ctrl-switch is-on">
+                                        <span class="ctrl-switch-thumb"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Channel 2 -->
+                        <div class="ctrl-panel" style="flex: 1; min-width: 120px;">
+                            <div class="ctrl-label mb-3">CH 2</div>
+                            <div class="ctrl-col ctrl-gap-md align-items-center">
+                                <div class="ctrl-knob-accent" style="transform: rotate(-20deg);"></div>
+                                <div class="ctrl-slider-track" style="width: 80px;">
+                                    <div class="ctrl-slider-fill-stijl" style="width: 40%;"></div>
+                                </div>
+                                <div class="ctrl-meter" style="width: 40px; height: 60px;">
+                                    <div class="ctrl-meter-bar" style="height: 30%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 45%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 35%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 50%;"></div>
+                                </div>
+                                <div class="ctrl-between" style="width: 100%;">
+                                    <span class="ctrl-label-engraved">Mute</span>
+                                    <div class="ctrl-switch">
+                                        <span class="ctrl-switch-thumb"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Channel 3 -->
+                        <div class="ctrl-panel" style="flex: 1; min-width: 120px;">
+                            <div class="ctrl-label mb-3">CH 3</div>
+                            <div class="ctrl-col ctrl-gap-md align-items-center">
+                                <div class="ctrl-knob" style="transform: rotate(80deg);"></div>
+                                <div class="ctrl-slider-track" style="width: 80px;">
+                                    <div class="ctrl-slider-fill-rietveld" style="width: 85%;"></div>
+                                </div>
+                                <div class="ctrl-meter" style="width: 40px; height: 60px;">
+                                    <div class="ctrl-meter-bar" style="height: 60%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 85%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 70%;"></div>
+                                    <div class="ctrl-meter-bar" style="height: 95%;"></div>
+                                </div>
+                                <div class="ctrl-between" style="width: 100%;">
+                                    <span class="ctrl-label-engraved">Mute</span>
+                                    <div class="ctrl-switch is-on">
+                                        <span class="ctrl-switch-thumb"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Master -->
+                        <div class="ctrl-panel ctrl-panel-geometric" style="flex: 1; min-width: 140px; background: var(--ho-neutral-100);">
+                            <div class="ctrl-label-accent mb-3">MASTER</div>
+                            <div class="ctrl-col ctrl-gap-md align-items-center">
+                                <div class="ctrl-knob-lg" style="transform: rotate(60deg);"></div>
+                                <div class="ctrl-screen" style="width: 100%; font-size: 0.75rem; padding: 8px;" >
+                                    <div class="ctrl-screen-label">Output</div>
+                                    <div style="font-size: 1.25rem; font-weight: 700;">-3.2 dB</div>
+                                </div>
+                                <div class="ctrl-meter-h" style="width: 100%;">
+                                    <div class="ctrl-meter-segment"></div>
+                                    <div class="ctrl-meter-segment"></div>
+                                    <div class="ctrl-meter-segment"></div>
+                                    <div class="ctrl-meter-segment"></div>
+                                    <div class="ctrl-meter-segment"></div>
+                                    <div class="ctrl-meter-segment"></div>
+                                    <div class="ctrl-meter-segment" data-level="warn"></div>
+                                    <div class="ctrl-meter-segment" data-off data-level="warn"></div>
+                                    <div class="ctrl-meter-segment" data-off data-level="hot"></div>
+                                    <div class="ctrl-meter-segment" data-off data-level="hot"></div>
+                                </div>
+                                <button class="ctrl-btn-stijl" style="width: 100%; padding: 8px;">
+                                    <span class="ctrl-led is-hot ctrl-led-pulse" style="box-shadow: none;"></span>
+                                    REC
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- COMPOSITE: DASHBOARD -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Composite Example — System Dashboard</h2>
+
+            <div class="component-demo">
+                <div class="d-flex gap-3 flex-wrap">
+                    <!-- Status Card -->
+                    <div class="ctrl-card-mondrian" style="flex: 1; min-width: 240px;">
+                        <div class="ctrl-card-header">
+                            <div class="ctrl-row ctrl-gap-sm">
+                                <span class="ctrl-led is-on" style="box-shadow: none;"></span>
+                                System Health
+                            </div>
+                        </div>
+                        <div class="ctrl-card-body">
+                            <div class="ctrl-col ctrl-gap-md">
+                                <div class="ctrl-between">
+                                    <span class="ctrl-label">API Server</span>
+                                    <span class="ctrl-led is-on"></span>
+                                </div>
+                                <div class="ctrl-between">
+                                    <span class="ctrl-label">Worker Queue</span>
+                                    <span class="ctrl-led is-warn"></span>
+                                </div>
+                                <div class="ctrl-between">
+                                    <span class="ctrl-label">Storage Node</span>
+                                    <span class="ctrl-led is-on"></span>
+                                </div>
+                                <div class="ctrl-divider-groove"></div>
+                                <div class="ctrl-between">
+                                    <span class="ctrl-label">Throughput</span>
+                                    <div class="ctrl-ring" style="--progress: 72; width: 40px; height: 40px;">
+                                        <span style="display: none;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="ctrl-card" style="flex: 1; min-width: 240px;">
+                        <div class="ctrl-card-header">Quick Actions</div>
+                        <div class="ctrl-card-body">
+                            <div class="ctrl-col ctrl-gap-sm">
+                                <button class="ctrl-btn-primary ctrl-btn-block">
+                                    Deploy Update
+                                </button>
+                                <button class="ctrl-btn-canal ctrl-btn-block">
+                                    Run Diagnostics
+                                </button>
+                                <button class="ctrl-btn ctrl-btn-block">
+                                    Clear Cache
+                                </button>
+                                <div class="ctrl-divider-groove"></div>
+                                <div class="ctrl-between">
+                                    <span class="ctrl-label">Maintenance Mode</span>
+                                    <div class="ctrl-switch" data-state="stijl">
+                                        <span class="ctrl-switch-thumb"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- LAYOUT UTILITIES -->
+        <!-- ============================================================ -->
+        <section class="showcase-section">
+            <h2 class="showcase-title">Layout Utilities</h2>
+
+            <div class="component-demo">
+                <div class="component-label">Flex Helpers</div>
+                <div class="ctrl-col ctrl-gap-md" style="max-width: 500px;">
+                    <div>
+                        <span class="ctrl-label mb-2 d-block">.ctrl-row</span>
+                        <div class="ctrl-row p-2" style="background: rgba(0,0,0,0.03); border-radius: 4px;">
+                            <div class="ctrl-chip is-active">Item 1</div>
+                            <div class="ctrl-chip">Item 2</div>
+                            <div class="ctrl-chip">Item 3</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="ctrl-label mb-2 d-block">.ctrl-between</span>
+                        <div class="ctrl-between p-2" style="background: rgba(0,0,0,0.03); border-radius: 4px;">
+                            <span class="ctrl-label">Label</span>
+                            <span class="ctrl-led is-on"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="ctrl-label mb-2 d-block">.ctrl-center</span>
+                        <div class="ctrl-center p-3" style="background: rgba(0,0,0,0.03); border-radius: 4px;">
+                            <button class="ctrl-btn-primary">Centered</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Gap Sizes</div>
+                <div class="ctrl-row ctrl-gap-xs mb-2">
+                    <span class="ctrl-chip">xs</span><span class="ctrl-chip">gap</span>
+                </div>
+                <div class="ctrl-row ctrl-gap-sm mb-2">
+                    <span class="ctrl-chip">sm</span><span class="ctrl-chip">gap</span>
+                </div>
+                <div class="ctrl-row ctrl-gap-md mb-2">
+                    <span class="ctrl-chip">md</span><span class="ctrl-chip">gap</span>
+                </div>
+                <div class="ctrl-row ctrl-gap-lg mb-2">
+                    <span class="ctrl-chip">lg</span><span class="ctrl-chip">gap</span>
+                </div>
+                <div class="ctrl-row ctrl-gap-xl">
+                    <span class="ctrl-chip">xl</span><span class="ctrl-chip">gap</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-4 mt-5">
+            <div class="ctrl-divider-stijl mx-auto mb-4" style="max-width: 200px;"></div>
+            <p class="ctrl-label-engraved">Holland Controls — Tactile Interface System</p>
+            <p class="ctrl-label-light">Neumorphic hardware meets Dutch Modernism</p>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -294,15 +294,19 @@
     // ========================================================================
 
     .card-holland {
-        border: 3px solid var(--ho-stijl-black);
-        border-radius: var(--ho-radius-geometric);
+        border: 3px solid var(--ho-stijl-black) !important;
+        border-radius: var(--ho-radius-geometric) !important;
         overflow: hidden;
         transition: all 0.3s ease;
         background: var(--ho-stijl-white);
 
+        .no-border-radius {
+            border-radius: 0 !important;
+        }
+
         &:hover {
             transform: translateY(-4px);
-            box-shadow: 8px 8px 0 var(--ho-stijl-black);
+            box-shadow: 8px 8px 0 var(--ho-stijl-black) !important;
         }
 
         .card-header {

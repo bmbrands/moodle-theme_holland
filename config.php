@@ -36,8 +36,8 @@ $THEME->scss = function ($theme) {
 $THEME->layouts = [
     'frontpage' => [
         'file' => 'frontpage.php',
-        'regions' => ['fp-before', 'fp-after'],
-        'defaultregion' => 'fp-after',
+        'regions' => ['side-pre', 'side-post'],
+        'defaultregion' => 'side-pre',
         'options' => ['nonavbar' => true],
     ],
     'course' => [

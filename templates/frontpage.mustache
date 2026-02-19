@@ -26,10 +26,10 @@
     * sitename - The name of the site
     * output - The core renderer for the page
     * bodyattributes - attributes for the body tag as a string of html attributes
-    * fpbeforeblocks - HTML for the fp-before block region
-    * hasfpbeforeblocks - true if there are blocks in fp-before
-    * fpafterblocks - HTML for the fp-after block region
-    * hasfpafterblocks - true if there are blocks in fp-after
+    * sidepreblocks - HTML for the side-pre block region
+    * hassidepre - true if there are blocks in side-pre
+    * sidepostblocks - HTML for the side-post block region
+    * hassidepost - true if there are blocks in side-post
     * holland - Object with hasfeaturedcourses and featuredcourses
 
     Example context (json):
@@ -42,10 +42,10 @@
             "main_content": "<h1>Headings make html validators happier</h1>"
         },
         "bodyattributes": "",
-        "fpbeforeblocks": "",
-        "hasfpbeforeblocks": false,
-        "fpafterblocks": "",
-        "hasfpafterblocks": false,
+        "sidepreblocks": "",
+        "hassidepre": false,
+        "sidepostblocks": "",
+        "hassidepost": false,
         "addblockbutton": "",
         "holland": {
             "hasfeaturedcourses": false,
@@ -70,11 +70,9 @@
 
             <div id="page-content" class="pb-3 d-print-block">
 
-                {{#hasfpbeforeblocks}}
-                <div id="frontpage-blocks-before" class="frontpage-blocks mb-3">
-                    {{{ fpbeforeblocks }}}
-                </div>
-                {{/hasfpbeforeblocks}}
+                <section id="frontpage-blocks-before" class="frontpage-blocks mb-3" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
+                    {{{ sidepreblocks }}}
+                </section>
 
                 <div id="region-main-box">
                     <div id="region-main">
@@ -88,13 +86,9 @@
                 </div>
 
                 {{> theme_holland/theme/frontpage/featuredcourses }}
-
-                {{#hasfpafterblocks}}
-                <div id="frontpage-blocks-after" class="frontpage-blocks mt-3">
-                    {{{ fpafterblocks }}}
-                </div>
-                {{/hasfpafterblocks}}
-
+                <section id="frontpage-blocks-after" class="frontpage-blocks mt-3" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
+                    {{{ sidepostblocks }}}
+                </section>
                 {{#addblockbutton}}
                 <div class="d-print-none mt-3">
                     {{{ addblockbutton }}}

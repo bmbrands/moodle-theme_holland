@@ -40,7 +40,7 @@
             <div class="col-lg-3 order-lg-last text-center">
                 {{#courseimage}}
                     <div class="mb-3 course-header-image position-relative">
-                        <img class="img-fluid rounded" alt="" src="{{{courseimage}}}">
+                        <div class="course-header-image-bg rounded" style="background-image: url('{{{courseimage}}}');"></div>
                         {{#canedit}}
                         <button class="btn btn-icon icon-no-margin course-image-edit-button"
                             data-action="course-image-edit-form"
