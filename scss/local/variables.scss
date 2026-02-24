@@ -1,4 +1,6 @@
-// Bootstrap variables
+// Holland theme variables
+
+// Colors
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -11,17 +13,12 @@ $gray-800: #343a40 !default;
 $gray-900: #1d2125 !default;
 $black:    #000 !default;
 
-$blue:    #0f6cbf !default;
-$indigo:  #6610f2 !default;
-$purple:  #613d7c !default;
+// Colors (overrides where different from default preset)
 $pink:    #e83e8c !default;
-$red:     #ca3120 !default;
 $orange:  #f0ad4e !default;
 $yellow:  #ff7518 !default;
-$green:   #357a32 !default;
-$teal:    #20c997 !default;
-$cyan:    #008196 !default;
 
+// Purple palette
 $purple-900: #3C1366;
 $purple-800: #523E7B;
 $purple-700: #5331A3;
@@ -33,81 +30,13 @@ $purple-50: #F0EFF5;
 
 $container-bg: #f8f8f8 !default;
 
-// CAIE colors
+// Blue palette
 $blue-900: #133844 !default;
 $blue-500: #00BDB6 !default;
 $blue-300: #8EE8D8 !default;
 $blue-100: #D7FDF5 !default;
 
-$boost: #0F6CBF !default;
-
-$primary:       $blue !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $orange !default;
-$danger:        $red !default;
-$secondary:     $gray-400 !default;
-
-$info-outline:    #1f7e9a;
-$warning-outline: #a6670e;
-
-
-// Options
-$enable-responsive-font-sizes: true !default;
-
-// Body
-$body-color:    $gray-900 !default;
-
-$font-size-base: 1.1rem !default;
-$rfs-base-font-size: 0.9rem !default;
-$headings-font-weight:   700 !default;
-$headings-font-family: "Open Sans" !default;
-$font-family-sans-serif: "Open Sans" !default;
-
-// Source sans pro
-// $headings-font-family: 'Source Sans Pro', sans-serif !default;
-// $font-family-sans-serif: 'Source Sans Pro', sans-serif !default;
-
-// Navbar
-$navbar-dark-hover-color:           rgba($white, 1) !default;
-$navbar-light-color:                rgba($black, 0.6) !default;
-$navbar-light-hover-color:          rgba($black, .9) !default;
-
-// Breadcrumbs
-$breadcrumb-padding-y:              .5rem !default;
-$breadcrumb-padding-x:              0 !default;
-$breadcrumb-item-padding:           .5rem !default;
-$breadcrumb-margin-bottom:          0 !default;
-$breadcrumb-bg:                     transparent !default;
-$breadcrumb-divider: "/" !default;
-$breadcrumb-divider-rtl: "/" !default;
-
-// Alerts
-$alert-border-width:                0 !default;
-
-$card-group-margin: .25rem;
-
-// Toasts
-$toast-color:                       $white !default;
-$toast-background-color:            rgba($gray-900, .95) !default;
-$toast-header-color:                $gray-100 !default;
-$toast-header-background-color:     rgba($white, .1) !default;
-
-// Custom control size
-$custom-control-indicator-size: 1.25rem;
-
-$input-btn-focus-color: rgba($primary, .75) !default;
-
-$input-border-color: #d1d5db !default;
-
-$dropdown-link-hover-color: $white;
-$dropdown-link-hover-bg: $primary;
-
-$popover-max-width: 300px !default;
-
-$border-radius: .5rem !default;
-$border-radius-lg: .6rem !default;
-
+// Theme colors
 $primary:       $purple-800;
 $secondary:     $gray-200;
 $success:       #96cc64;
@@ -117,38 +46,48 @@ $danger:        rgb(238, 71, 146);
 $light:         #eaeaea;
 $dark:          $gray-800 !default;
 
-$theme-colors: ();
-$theme-colors: map-merge(
-    (
-        "primary":    $primary,
-        "secondary":  $secondary,
-        "success":    $success,
-        "info":       $info,
-        "warning":    $warning,
-        "danger":     $danger,
-        "light":      $light,
-        "dark":       $dark
-    ),
-    $theme-colors
-);
+$boost: #0F6CBF !default;
 
-$spacer: 1rem !default;
-$spacers: (
-    0: 0,
-    1: ($spacer * .25),
-    2: ($spacer * .5),
-    3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 2),
-    6: ($spacer * 3)
-) !default;
+// Options
+$enable-responsive-font-sizes: true !default;
 
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-$activity-icon-collaboration-filter:
-    invert(25%) sepia(54%) saturate(6226%) hue-rotate(279deg) brightness(100%) contrast(102%);
+$font-size-base: 1rem !default;
+$rfs-base-font-size: 0.9rem !default;
+$headings-font-weight:   700 !default;
+$headings-font-family: "Open Sans" !default;
+$font-family-sans-serif: "Open Sans" !default;
+
+// Links
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
+
+// Navbar
+$navbar-dark-hover-color:           rgba($white, 1) !default;
+$navbar-light-color:                rgba($black, 0.6) !default;
+$navbar-light-hover-color:          rgba($black, .9) !default;
+
+// Breadcrumbs
+$breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding:           .5rem !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+
+// Alerts
+$alert-border-width:                0 !default;
+
+// Toasts
+$toast-color:                       $white !default;
+$toast-background-color:            rgba($gray-900, .95) !default;
+$toast-header-color:                $gray-100 !default;
+$toast-header-background-color:     rgba($white, .1) !default;
+
+// Custom control size
+$custom-control-indicator-size: 1.25rem;
+$input-btn-focus-color: rgba($primary, .75) !default;
+$input-border-color: #d1d5db !default;
+
+// Custom variables
 $primary-light-background: rgba(149, 45, 152, 0.1);
 $courseindex-item-page-bg: rgba(149, 45, 152, 0.1);
 $courseindex-link-color-selected: #952D98;
@@ -159,8 +98,8 @@ $course-section-maxwidth: 900px;
 $card-border-width:                 0;
 $btn-border-radius: 0.3rem !default;
 $table-accent-bg: rgba($white, .03);
-$card-border-color:                 transparent;
-$card-inner-border-radius:          0;
+$card-border-color: transparent;
+$card-inner-border-radius: 0;
 
 $navbar-height: 65px;
 $drawer-right-width: 315px;

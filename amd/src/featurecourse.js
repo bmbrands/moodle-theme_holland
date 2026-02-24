@@ -40,7 +40,7 @@ class FavouriteCourse {
         }
         this.courseHeader = this.rootElement.querySelector('#page-header-title');
         this.buttonContainer = document.createElement('div');
-        this.buttonContainer.classList.add('d-inline-block', 'ml-4');
+        this.buttonContainer.classList.add('d-inline-block', 'ms-4');
         // Insert the button container after the course title.
         this.courseHeader.parentNode.insertBefore(this.buttonContainer, this.courseHeader.nextSibling);
         this.render();
