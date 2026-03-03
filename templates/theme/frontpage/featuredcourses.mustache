@@ -39,20 +39,11 @@
     }
 }}
 {{#holland.hasfeaturedcourses}}
-<div id="featuredcourses" class="card-grid-container mb-5 mx-2">
+<div id="featuredcourses" class="card-grid-container mb-5">
     <h2 class="">{{#str}}featuredcourses, theme_holland{{/str}}</h2>
-    <div class="card-grid">
+    <div class="row row-cols-2 row-cols-md-4 g-4">
         {{#holland.featuredcourses}}
-        <div class="card ctrl-card dashboard-card">
-            <div class="dashboard-card-img" style="background-image: url('{{{imgurl}}}'); height: 10rem;"></div>
-            <div class="card-body">
-                <h5 class="card-title">{{{title}}}</h5>
-                <p class="card-text">{{#shortentext}}250, {{{description}}} {{/shortentext}}</p>
-            </div>
-            <div class="card-footer roundedbottom">
-                <a href="{{{url}}}" class="btn btn-yellow stretched-link">{{#str}}view{{/str}}</a>
-            </div>
-        </div>
+            {{> theme_holland/theme/coursecard }}
         {{/holland.featuredcourses}}
     </div>
 </div>

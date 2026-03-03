@@ -23,35 +23,6 @@
     #page-wrapper {
         height: auto;
         position: relative;
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background-color: $blue-500;
-            z-index: -1;
-        }
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 264px;
-            background-color: $purple-900;
-            z-index: -2;
-        }
-        .pagebg {
-            background-color: $gray-100;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            z-index: -3;
-        }
     }
 
     // Add some padding for the drawer toggle buttons
@@ -82,7 +53,8 @@
 
 @include media-breakpoint-up(md) {
     #page-wrapper #page {
-        min-height: calc(100vh - #{$navbar-height});
+        min-height: 100vh;
+        margin-top: 0;
     }
     .path-course-view-section.format-mawang #page-wrapper #page,
     .path-mod.format-mawang #page-wrapper #page {

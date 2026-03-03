@@ -36,6 +36,10 @@ $blue-500: #00BDB6 !default;
 $blue-300: #8EE8D8 !default;
 $blue-100: #D7FDF5 !default;
 
+$lime:    #a2e436 !default;
+$limelight: #e9ffcd !default;
+$limedark: #acd478 !default;
+
 // Theme colors
 $primary:       $purple-800;
 $secondary:     $gray-200;
@@ -101,7 +105,7 @@ $table-accent-bg: rgba($white, .03);
 $card-border-color: transparent;
 $card-inner-border-radius: 0;
 
-$navbar-height: 65px;
+$navbar-height: 70px;
 $drawer-right-width: 315px;
 $drawer-left-width: 270px !default;
 $enable-rounded: true !default;

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+  <defs>
+    <style>
+      .uuid-a8d9901b-e53c-46b0-a9f6-67f86708ed5e {
+        clip-path: url(#uuid-9a3c2bf4-c7e0-48b5-a8c8-6381fa2f8bf9);
+      }
+
+      .uuid-ed9ce403-e818-40d6-83c9-368bc638024e {
+        fill: #434361;
+      }
+
+      .uuid-ed9ce403-e818-40d6-83c9-368bc638024e, .uuid-2bec57e4-d147-4522-bc15-6970921095af, .uuid-1d2d0a3c-927a-4faf-95e9-59cee52cce08, .uuid-eba0cb1d-98a0-4507-8ec3-102418de546b, .uuid-991577d4-17ad-4958-9c29-105d1a5aad06, .uuid-cdd9250e-7b87-48ab-b55b-9f389ae40726, .uuid-70885bcb-2def-4f4a-b51a-a4f41248c750, .uuid-852c5840-3b59-4a61-95f3-ebf9601789bc, .uuid-ad22e4d9-f587-4cc2-b18d-280137779848, .uuid-08032b18-3c8c-40c7-a120-93c1ac753c66, .uuid-55f3ca8a-5c99-4577-84ad-c4149cce38c6, .uuid-ccb24bb2-cc9e-4363-be47-640f9c6e6e2b, .uuid-b8b4a832-284e-4c33-9a7e-e634b3c8a401, .uuid-3179e74d-c3f3-4604-9bf6-1e24d5394576, .uuid-4b76d001-304b-4eb2-9fbc-e4d1c0e704c9, .uuid-c53164e8-1597-48e5-9629-3b210228fa3a, .uuid-ba584a8a-a17a-4f64-af48-855666026208, .uuid-1a3b50cd-2b36-403c-acd8-b91fff6b5316, .uuid-cfc6333a-9f8d-453e-bab1-77907d74f6bc, .uuid-afaede9b-aa96-40d7-b5c0-705176342e6e, .uuid-098dc6d3-476a-40f5-afd2-895e2dfbcef9, .uuid-c2dac71c-dcec-4d23-87b1-a24c59eb4665, .uuid-e10a778d-3ace-4467-9e97-4510350df75a, .uuid-5a40ebb0-f829-428b-8d5f-e8b562c09341, .uuid-6822104a-6078-49b8-ba6c-8f2a5577ee3f, .uuid-9c4cd0e8-fc1d-4e41-97fa-59ae5f1d993d, .uuid-6dbaaf25-35b3-49fa-a1f2-8313ffa0b45b, .uuid-7911c815-7dbe-4128-a311-d19816709d1e, .uuid-9497905c-350a-4d25-8b90-933480936d65, .uuid-406bf8f4-8bf3-4270-a838-bf8f099c3478, .uuid-cac625cd-70f4-453d-b8c9-ea1e1c69be24, .uuid-5df89e6f-a2fa-4ca3-b41b-3481dc2ecd65, .uuid-1260fccd-f378-445a-8617-bba856154e39, .uuid-bdccaafa-9332-470e-a3dd-8c6213dd7eaf, .uuid-9c463b80-5ef3-4f8d-af19-9c7633a0bbdc, .uuid-eda52ffa-fcdd-4753-8733-b3394da59e74, .uuid-df415d6a-3efd-4a51-8be3-7def1f417b9a, .uuid-c432b23c-6d44-4b00-a9ac-5deb2fdd1bad, .uuid-64cc2efc-e7a9-464c-b1c6-f322978308df, .uuid-22ca4db5-f976-4fcc-91a9-e2fdf7990692, .uuid-1d5e236b-e3ec-4475-ac11-8f6d264757ac, .uuid-9db7e7d3-df6a-4b6e-8c24-11905b81659d, .uuid-eb7565ce-b867-4c1e-aa81-6623e84948c3, .uuid-6b980978-054b-4b0a-8463-58f2736bb7c4, .uuid-6f96f471-0d87-466f-83ac-c45664a36ee4, .uuid-4ebe8645-ca0b-43a0-b9c1-5b98739b42a5, .uuid-d82a2498-808a-4352-8925-2b94709223c0, .uuid-685d233f-4cea-48ca-a88a-08bcbb6ab3e2, .uuid-4b569e4e-aa55-4b1a-bbb5-452041fc5dcc, .uuid-228734ce-19d5-45d0-aa0c-4090f232537f, .uuid-a89d31b3-3155-4d07-8468-67c291025d00, .uuid-f7b08613-5188-469b-87f3-23d8e6635f5f, .uuid-4988286c-af2d-47af-8831-705625daecc9, .uuid-e6c5e5ad-fd41-49fc-a58e-ec1240953c90, .uuid-eadce729-75f6-4e54-b4de-391b0ab5e2f1, .uuid-34081b47-72c6-4f18-b8f5-fa8e42a3b33c, .uuid-59838b2a-845b-4a3b-b305-758bc9219ef1, .uuid-4b0b1ae8-412a-42e7-adf9-bdbf6bc86847, .uuid-ff586fdb-c436-4264-87a5-f2770b2d6592, .uuid-dea87748-df34-4404-9330-77ca55e84d72, .uuid-4334838f-68a0-479f-aabf-2e1624a96849, .uuid-f1189da7-7f43-43db-90d5-9aa32e6166f7, .uuid-1d2f7c19-ee3d-4189-ba27-055d74eb152c, .uuid-132c2949-9ea2-46c5-ae9b-ec9ac9db39e9, .uuid-2a55248a-5474-403a-bab0-c60a8d7afef3, .uuid-f7f79c3e-1ce0-48dd-80f1-dceaa2b5864d, .uuid-f0adc6d2-aec3-4236-aa72-e6b5402a5ac5, .uuid-364c8a28-20cc-4af5-b86a-3d3c4d49c8c4, .uuid-3460fa6c-7ece-4b81-9a6f-c525ec730d53, .uuid-e1986cd4-9f8d-402e-acb4-636efcfc5592, .uuid-40ccd638-c717-42e0-af33-d70eb47fd54f, .uuid-dfead0f3-f377-41e8-aa3c-197148c88e05, .uuid-a4403d3c-7d64-441a-a932-f2cd890290e3, .uuid-769144b3-96d7-4b2b-83a9-0343e61e6b5a, .uuid-2b6faf24-6162-45ec-94f2-2280e5856bba {
+        stroke-width: 0px;
+      }
+
+      .uuid-2bec57e4-d147-4522-bc15-6970921095af {
+        fill: #07877e;
+      }
+
+      .uuid-1d2d0a3c-927a-4faf-95e9-59cee52cce08 {
+        fill: #e39110;
+      }
+
+      .uuid-eba0cb1d-98a0-4507-8ec3-102418de546b {
+        fill: #871414;
+      }
+
+      .uuid-991577d4-17ad-4958-9c29-105d1a5aad06 {
+        fill: #f5af90;
+      }
+
+      .uuid-4506de8f-f286-4900-8d45-947a053f5b75, .uuid-22ca4db5-f976-4fcc-91a9-e2fdf7990692 {
+        fill: #9ce6dc;
+      }
+
+      .uuid-3d9c1ae9-2289-4610-969e-8c3d23d1c979, .uuid-cdd9250e-7b87-48ab-b55b-9f389ae40726 {
+        fill: #e9ffcd;
+      }
+
+      .uuid-519d7290-190d-4347-bcfe-de7844b36311 {
+        clip-path: url(#uuid-1a317fe9-a1eb-4b25-9e38-4cdf40dd3213);
+      }
+
+      .uuid-70885bcb-2def-4f4a-b51a-a4f41248c750 {
+        fill: #91341f;
+      }
+
+      .uuid-852c5840-3b59-4a61-95f3-ebf9601789bc {
+        fill: #d99a34;
+      }
+
+      .uuid-ad22e4d9-f587-4cc2-b18d-280137779848 {
+        fill: #fff7e6;
+      }
+
+      .uuid-08032b18-3c8c-40c7-a120-93c1ac753c66 {
+        fill: url(#uuid-8165ccbd-bb85-40d4-88b6-0350cb13e07e);
+      }
+
+      .uuid-08032b18-3c8c-40c7-a120-93c1ac753c66, .uuid-7911c815-7dbe-4128-a311-d19816709d1e {
+        mix-blend-mode: screen;
+      }
+
+      .uuid-df19728c-6ef3-42cd-93d6-9d23d702f86c {
+        clip-path: url(#uuid-eecbe529-0f3f-4818-8cb0-416be9516091);
+      }
+
+      .uuid-55f3ca8a-5c99-4577-84ad-c4149cce38c6 {
+        fill: #2c4d6e;
+      }
+
+      .uuid-c907bfa1-b373-4f29-a4fd-bb9008254ef8 {
+        clip-path: url(#uuid-9537d9b0-ee5e-4d11-a32c-d45e5b43faf2);
+      }
+
+      .uuid-ccb24bb2-cc9e-4363-be47-640f9c6e6e2b {
+        fill: #f7c168;
+      }
+
+      .uuid-b8b4a832-284e-4c33-9a7e-e634b3c8a401 {
+        fill: #663932;
+      }
+
+      .uuid-3179e74d-c3f3-4604-9bf6-1e24d5394576 {
+        fill: #6b3628;
+      }
+
+      .uuid-95bca419-6d5d-4928-842d-1c947fa365e4, .uuid-2b6faf24-6162-45ec-94f2-2280e5856bba {
+        fill: #f0cb37;
+      }
+
+      .uuid-4b76d001-304b-4eb2-9fbc-e4d1c0e704c9 {
+        fill: #deba85;
+      }
+
+      .uuid-c53164e8-1597-48e5-9629-3b210228fa3a {
+        fill: #914023;
+      }
+
+      .uuid-8bf7f19e-261d-4723-9e7f-50f9a55e6267 {
+        isolation: isolate;
+      }
+
+      .uuid-ba584a8a-a17a-4f64-af48-855666026208 {
+        fill: #deb37e;
+      }
+
+      .uuid-cfc6333a-9f8d-453e-bab1-77907d74f6bc {
+        fill: #c74b30;
+      }
+
+      .uuid-afaede9b-aa96-40d7-b5c0-705176342e6e, .uuid-8e7c1d42-f5b0-4600-b7a8-cc56ca1c4543 {
+        fill: #f5c4ec;
+      }
+
+      .uuid-098dc6d3-476a-40f5-afd2-895e2dfbcef9 {
+        fill: #c93a2a;
+      }
+
+      .uuid-c2dac71c-dcec-4d23-87b1-a24c59eb4665 {
+        fill: #00a99d;
+      }
+
+      .uuid-e10a778d-3ace-4467-9e97-4510350df75a {
+        fill: #555570;
+      }
+
+      .uuid-5a40ebb0-f829-428b-8d5f-e8b562c09341 {
+        fill: #067275;
+      }
+
+      .uuid-6822104a-6078-49b8-ba6c-8f2a5577ee3f {
+        fill: #ecef9f;
+      }
+
+      .uuid-9c4cd0e8-fc1d-4e41-97fa-59ae5f1d993d {
+        fill: #ad3c23;
+      }
+
+      .uuid-6dbaaf25-35b3-49fa-a1f2-8313ffa0b45b {
+        fill: #966259;
+      }
+
+      .uuid-7911c815-7dbe-4128-a311-d19816709d1e {
+        fill: url(#uuid-3c96fce5-29d6-4127-b4f5-c4c0a1a25682);
+      }
+
+      .uuid-9497905c-350a-4d25-8b90-933480936d65 {
+        fill: #429fa1;
+      }
+
+      .uuid-406bf8f4-8bf3-4270-a838-bf8f099c3478 {
+        fill: #3c6085;
+      }
+
+      .uuid-cac625cd-70f4-453d-b8c9-ea1e1c69be24 {
+        fill: #a65632;
+      }
+
+      .uuid-5df89e6f-a2fa-4ca3-b41b-3481dc2ecd65 {
+        fill: #bd8224;
+      }
+
+      .uuid-1260fccd-f378-445a-8617-bba856154e39 {
+        fill: #f2a277;
+      }
+
+      .uuid-bdccaafa-9332-470e-a3dd-8c6213dd7eaf {
+        fill: #9db3af;
+      }
+
+      .uuid-9c463b80-5ef3-4f8d-af19-9c7633a0bbdc {
+        fill: #522b21;
+      }
+
+      .uuid-eda52ffa-fcdd-4753-8733-b3394da59e74 {
+        fill: #37303d;
+      }
+
+      .uuid-df415d6a-3efd-4a51-8be3-7def1f417b9a {
+        fill: #7a3920;
+      }
+
+      .uuid-c432b23c-6d44-4b00-a9ac-5deb2fdd1bad {
+        fill: #e88063;
+      }
+
+      .uuid-64cc2efc-e7a9-464c-b1c6-f322978308df, .uuid-86e1ee9a-c6fb-4441-ac22-627d4cd699fa {
+        fill: #b8e281;
+      }
+
+      .uuid-1d5e236b-e3ec-4475-ac11-8f6d264757ac {
+        fill: #959fad;
+      }
+
+      .uuid-9db7e7d3-df6a-4b6e-8c24-11905b81659d {
+        fill: #ab7621;
+      }
+
+      .uuid-eb7565ce-b867-4c1e-aa81-6623e84948c3 {
+        fill: #7f8794;
+      }
+
+      .uuid-6b980978-054b-4b0a-8463-58f2736bb7c4 {
+        fill: #758c3b;
+      }
+
+      .uuid-6f96f471-0d87-466f-83ac-c45664a36ee4 {
+        fill: #a64d2b;
+      }
+
+      .uuid-4ebe8645-ca0b-43a0-b9c1-5b98739b42a5 {
+        fill: #034d54;
+      }
+
+      .uuid-d82a2498-808a-4352-8925-2b94709223c0 {
+        fill: #824535;
+      }
+
+      .uuid-685d233f-4cea-48ca-a88a-08bcbb6ab3e2 {
+        fill: #a67871;
+      }
+
+      .uuid-7f3341c7-507c-4127-81e2-ea994382d0e6 {
+        clip-path: url(#uuid-bc99a222-461b-4b5a-918b-0f5c061902be);
+      }
+
+      .uuid-4b569e4e-aa55-4b1a-bbb5-452041fc5dcc {
+        fill: #946053;
+      }
+
+      .uuid-228734ce-19d5-45d0-aa0c-4090f232537f {
+        fill: #ffeccf;
+      }
+
+      .uuid-a89d31b3-3155-4d07-8468-67c291025d00, .uuid-c41338ad-ad4a-4eda-bae2-1a17566dfeaf {
+        fill: #ffc4c4;
+      }
+
+      .uuid-f7b08613-5188-469b-87f3-23d8e6635f5f {
+        fill: #cf5138;
+      }
+
+      .uuid-4988286c-af2d-47af-8831-705625daecc9 {
+        fill: #f0cf9e;
+      }
+
+      .uuid-e6c5e5ad-fd41-49fc-a58e-ec1240953c90 {
+        fill: #97b54c;
+      }
+
+      .uuid-eadce729-75f6-4e54-b4de-391b0ab5e2f1 {
+        fill: #33334a;
+      }
+
+      .uuid-34081b47-72c6-4f18-b8f5-fa8e42a3b33c {
+        fill: #27273d;
+      }
+
+      .uuid-59838b2a-845b-4a3b-b305-758bc9219ef1 {
+        fill: #4d3f54;
+      }
+
+      .uuid-4b0b1ae8-412a-42e7-adf9-bdbf6bc86847 {
+        fill: #47251d;
+      }
+
+      .uuid-ff586fdb-c436-4264-87a5-f2770b2d6592 {
+        fill: #7d2815;
+      }
+
+      .uuid-dea87748-df34-4404-9330-77ca55e84d72 {
+        fill: #de7f57;
+      }
+
+      .uuid-059ef219-3640-46a8-9ad9-d66911d1b90a {
+        clip-path: url(#uuid-c07b45df-5d8f-4025-8b00-a62e01e507ff);
+      }
+
+      .uuid-c0e88149-6e71-45d9-9f32-7384291befab {
+        clip-path: url(#uuid-3d9e15ab-3de6-4bc3-8190-0b1dda656cdf);
+      }
+
+      .uuid-535e319c-0d50-4e02-aa0a-0b82399870f7 {
+        clip-path: url(#uuid-d48421d9-e04d-4591-90e7-ed13cf3a6332);
+      }
+
+      .uuid-4334838f-68a0-479f-aabf-2e1624a96849 {
+        fill: #ed7258;
+      }
+
+      .uuid-f1189da7-7f43-43db-90d5-9aa32e6166f7 {
+        fill: #452924;
+      }
+
+      .uuid-1d2f7c19-ee3d-4189-ba27-055d74eb152c {
+        fill: #5c2d21;
+      }
+
+      .uuid-132c2949-9ea2-46c5-ae9b-ec9ac9db39e9 {
+        fill: #7a231a;
+      }
+
+      .uuid-2a55248a-5474-403a-bab0-c60a8d7afef3 {
+        fill: #70463f;
+      }
+
+      .uuid-f7f79c3e-1ce0-48dd-80f1-dceaa2b5864d {
+        fill: #f0fffb;
+      }
+
+      .uuid-f0adc6d2-aec3-4236-aa72-e6b5402a5ac5 {
+        fill: #cce8e0;
+      }
+
+      .uuid-364c8a28-20cc-4af5-b86a-3d3c4d49c8c4 {
+        fill: #5e3a34;
+      }
+
+      .uuid-6be7d202-5eab-44d0-ab8c-4a5cc00a6b5a {
+        clip-path: url(#uuid-79418835-dfd4-4f40-99cb-21046292a81e);
+      }
+
+      .uuid-3460fa6c-7ece-4b81-9a6f-c525ec730d53 {
+        fill: #fbb03b;
+      }
+
+      .uuid-e1986cd4-9f8d-402e-acb4-636efcfc5592 {
+        fill: #153759;
+      }
+
+      .uuid-40ccd638-c717-42e0-af33-d70eb47fd54f {
+        fill: #657a2d;
+      }
+
+      .uuid-dfead0f3-f377-41e8-aa3c-197148c88e05 {
+        fill: #7e8796;
+      }
+
+      .uuid-a4403d3c-7d64-441a-a932-f2cd890290e3 {
+        fill: #63718a;
+      }
+
+      .uuid-769144b3-96d7-4b2b-83a9-0343e61e6b5a {
+        fill: #747c8a;
+      }
+    </style>
+  </defs>
+  <g class="uuid-8bf7f19e-261d-4723-9e7f-50f9a55e6267">
+    <g id="uuid-35a354db-b6ac-4ed7-87a4-c2861c37bc6d" data-name="background">
+      <rect class="uuid-6822104a-6078-49b8-ba6c-8f2a5577ee3f" width="1000" height="500" style="fill: rgba(236, 239, 159, 0);"/>
+    </g>
+    <g id="uuid-b4c6299c-261c-4306-b651-44abe7604b40" data-name="objects">
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="326.18" y="102.7" width="55.62" height="28.8" rx="7.78" ry="7.78"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="648.98" y="266.58" width="55.62" height="28.8" rx="7.78" ry="7.78"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="52.05" y="321.21" width="55.62" height="28.8" rx="7.78" ry="7.78"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="704.6" y="80.85" width="44.7" height="23.15" rx="6.25" ry="6.25"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="203.96" y="330.62" width="35.76" height="18.52" rx="5" ry="5"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="105.68" y="99.72" width="35.76" height="18.52" rx="5" ry="5"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="539.72" y="397.37" width="35.76" height="18.52" rx="5" ry="5"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="500.99" y="46.76" width="35.76" height="18.52" rx="5" ry="5"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="75.89" y="133.49" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="770.15" y="64.96" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="113.08" y="362.74" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="872.45" y="353.99" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="661.89" y="239.77" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="863.24" y="171.05" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="307.31" y="213.17" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="540.72" y="154.57" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="452.32" y="391.95" width="26.82" height="13.89" rx="3.75" ry="3.75"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="825.77" y="375.84" width="34.76" height="18" rx="4.86" ry="4.86"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="554.62" y="348.73" width="52.59" height="27.23" rx="7.36" ry="7.36"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="692.68" y="254.67" width="34.76" height="18" rx="4.86" ry="4.86"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="127.53" y="129.52" width="85.42" height="44.23" rx="11.95" ry="11.95"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="208.98" y="259.63" width="92.37" height="47.83" rx="12.92" ry="12.92"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="398.69" y="320.22" width="92.37" height="47.83" rx="12.92" ry="12.92"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="377.627" y="250.799" width="92.37" height="47.83" rx="12.92" ry="12.92"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="466.22" y="183.76" width="114.22" height="59.15" rx="15.98" ry="15.98"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="739.36" y="309.9" width="114.22" height="59.15" rx="15.98" ry="15.98"/>
+      <rect class="uuid-64cc2efc-e7a9-464c-b1c6-f322978308df" x="762.21" y="137.08" width="78.46" height="40.63" rx="10.98" ry="10.98"/>
+    </g>
+  </g>
+</svg>

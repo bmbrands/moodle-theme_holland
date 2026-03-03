@@ -1,0 +1,64 @@
+.userloggedinas .calllearning.usermenu .userbutton .avatars .avatar {
+    &.current {
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    &.realuser {
+        width: 60px;
+        height: 60px;
+        display: inline-block;
+    }
+}
+
+.user-dropdown {
+    .loggedinas {
+        position: relative;
+        .currentuser {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+            transform: translate(+15%, +10%);
+        }
+    }
+    .dropdown-toggle {
+        .avatar {
+            img {
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                border: 0.2rem solid $white;
+                width: 75px;
+                height: 75px;
+                transition: all 0.3s;
+                border-radius: 50%;
+            }
+        }
+        &:hover {
+            .avatar {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+            .loggedinas {
+                .currentuser {
+                    transform: translate(+50%, 0%);
+                }
+            }
+        }
+        &::after {
+            content: '';
+        }
+    }
+    .dropdown-menu {
+        .avatar {
+            img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+$adminbarheight: 50px;
+$adminbarbgcolor: #2c3338;
+$adminbarcolor: #c3c4c7;
+$adminbarhovercolor: #72aee6;
+
+.pageeditor {
+    #page-wrapper #page.drawers {
+        margin-top: $adminbarheight;
+    }
+    [data-region="right-hand-drawer"].drawer {
+        margin-top: 0;
+        top: $adminbarheight;
+        height: calc(100% - #{$adminbarheight});
+    }
+    .adminbar {
+        direction: ltr;
+        color: #c3c4c7;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 2.46153846;
+        height: $adminbarheight;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: 600px;
+        z-index: 99999;
+        background: $adminbarbgcolor;
+
+        .adminbar-inner {
+            max-width: $course-content-maxwidth;
+            margin: 0 auto;
+        }
+
+        .editmode-switch-form {
+            height: $adminbarheight;
+        }
+
+        ul > li > .nav-link {
+            height: $adminbarheight;
+            padding: 0 8px 0 7px;
+            color: #f0f0f1;
+            text-decoration: none;
+            white-space: nowrap;
+            &:hover,
+            &:focus {
+                background: $adminbarbgcolor;
+                color: $limelight;
+            }
+        }
+        .custom-control-label::before {
+            top: -1px;
+        }
+        .custom-switch .custom-control-label::after {
+            top: 1px;
+        }
+
+        .secondary-navigation {
+            padding: 0;
+            .navigation {
+                border-bottom: 0;
+                background-color: transparent;
+                margin: 0;
+                padding: 0;
+                .nav-tabs {
+                    border: none;
+                    margin: 0 auto;
+                    .nav-link {
+                        border-radius: initial;
+                    }
+                }
+            }
+        }
+        .moremenu {
+            height: $adminbarheight;
+            .nav-link {
+                font-weight: 700;
+                height: $adminbarheight;
+                border-bottom-width: 1px;
+                &.active {
+                    background-color: $adminbarbgcolor;
+                    color: $limelight;
+                    border-color: $lime;
+                }
+                &:hover,
+                &:focus {
+                    background-color: $adminbarbgcolor;
+                    color: $limelight;
+                    border-color: $lime;
+                }
+            }
+            .nav-tabs {
+                background-color: $adminbarbgcolor;
+            }
+        }
+    }
+
+    .navbar.fixed-top {
+        top: $adminbarheight;
+    }
+    .drawer-toggles .drawer-toggler {
+        top: calc(#{$adminbarheight} + 0.7rem);
+    }
+    .drawer-left,
+    .drawer-right {
+        top: $adminbarheight;
+    }
+
+    @include media-breakpoint-up(sm) {
+        .modal-dialog {
+            margin-top: 3rem;
+        }
+        .adminbar-inner {
+            padding: 0 1rem;
+        }
+    }
+}

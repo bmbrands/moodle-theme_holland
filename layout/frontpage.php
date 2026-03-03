@@ -27,7 +27,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$bodyattributes = $OUTPUT->body_attributes([]);
+$holland = new \theme_holland\holland();
+
+$bodyattributes = $OUTPUT->body_attributes($holland->bodyclasses);
 
 $primary = new core\navigation\output\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
@@ -37,16 +39,19 @@ $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
 // Render the two block regions using the proper API to detect content.
-$sidepreblocks = $OUTPUT->blocks('side-pre');
+$sidepreblocks = $OUTPUT->blocks_for_region('side-pre');
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
 
-$sidepostblocks = $OUTPUT->blocks('side-post');
+$sidepostblocks = $OUTPUT->blocks_for_region('side-post');
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 
-$addblockbutton = $OUTPUT->addblockbutton();
+$addpreblockbutton = $OUTPUT->addblockbutton('side-pre');
+$addpostblockbutton = $OUTPUT->addblockbutton('side-post');
 
-// Featured courses from the holland helper class.
-$holland = new \theme_holland\holland();
+$numblockssidepre = $holland->numblockssidepre();
+$numblockssidepost = $holland->numblockssidepost();
+$numblockssidepresm = min(2, $numblockssidepre);
+$numblockssidepostsm = min(2, $numblockssidepost);
 
 $templatecontext = [
     'sitename' => format_string(
@@ -56,20 +61,22 @@ $templatecontext = [
     ),
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes,
-    'primarymoremenu' => $primarymenu['moremenu'],
+    'numblockssidepre' => $numblockssidepre,
+    'numblockssidepost' => $numblockssidepost,
+    'numblockssidepresm' => $numblockssidepresm,
+    'numblockssidepostsm' => $numblockssidepostsm,
+    'secondarymoremenu' => $primarymenu['moremenu'],
     'mobileprimarynav' => $primarymenu['mobileprimarynav'],
     'usermenu' => $primarymenu['user'],
     'langmenu' => $primarymenu['lang'],
     'headercontent' => $headercontent,
-    'addblockbutton' => $addblockbutton,
+    'addpreblockbutton' => $addpreblockbutton,
+    'addpostblockbutton' => $addpostblockbutton,
     'sidepreblocks' => $sidepreblocks,
     'hassidepre' => $hassidepre,
     'sidepostblocks' => $sidepostblocks,
     'hassidepost' => $hassidepost,
-    'holland' => [
-        'hasfeaturedcourses' => $holland->hasfeaturedcourses(),
-        'featuredcourses' => $holland->featuredcourses(),
-    ],
+    'holland' => $holland,
 ];
 
-echo $OUTPUT->render_from_template('theme_holland/frontpage', $templatecontext);
+echo $OUTPUT->render_from_template('theme_holland/theme/frontpage', $templatecontext);

@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Course layout for the Holland theme.
+ * A drawer based layout for the boost theme.
  *
- * @package   theme_holland
- * @copyright 2026 Bas Brands <bas@sonsbeekmedia.nl>
+ * @package   theme_boost
+ * @copyright 2021 Bas Brands
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -66,6 +66,34 @@ $secondarynavigation = false;
 $overflow = '';
 if ($PAGE->has_secondary_navigation()) {
     $tablistnav = $PAGE->has_tablist_secondary_navigation();
+    // Inject a "Home" node as the first item in the secondary navigation.
+    $homenode = navigation_node::create(
+        get_string('home'),
+        new moodle_url('/', ['redirect' => 0]),
+        navigation_node::TYPE_SYSTEM,
+        null,
+        'home',
+        new pix_icon('i/home', '')
+    );
+    $PAGE->secondarynav->add_node($homenode, null);
+    // Move the home node to the beginning of the children collection.
+    $children = $PAGE->secondarynav->children;
+    $home = $children->get('home');
+    if ($home) {
+        $children->remove('home');
+        // Re-add at the start by collecting and re-adding all nodes.
+        $allnodes = [];
+        foreach ($children as $child) {
+            $allnodes[] = $child;
+        }
+        foreach ($allnodes as $child) {
+            $children->remove($child->key, $child->type);
+        }
+        $PAGE->secondarynav->add_node($home);
+        foreach ($allnodes as $child) {
+            $PAGE->secondarynav->add_node($child);
+        }
+    }
     $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs', true, $tablistnav);
     $secondarynavigation = $moremenu->export_for_template($OUTPUT);
     $overflowdata = $PAGE->secondarynav->get_overflow_menu_data();
@@ -104,9 +132,7 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
-    'holland' => [
-        'hasadminbar' => $holland->hasadminbar(),
-    ],
+    'holland' => $holland,
 ];
 
-echo $OUTPUT->render_from_template('theme_holland/theme/course', $templatecontext);
+echo $OUTPUT->render_from_template('theme_boost/drawers', $templatecontext);

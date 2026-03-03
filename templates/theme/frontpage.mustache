@@ -30,6 +30,8 @@
     * hassidepre - true if there are blocks in side-pre
     * sidepostblocks - HTML for the side-post block region
     * hassidepost - true if there are blocks in side-post
+    * numblockssidepre - Number of block columns for side-pre (1-6)
+    * numblockssidepost - Number of block columns for side-post (1-6)
     * holland - Object with hasfeaturedcourses and featuredcourses
 
     Example context (json):
@@ -46,6 +48,8 @@
         "hassidepre": false,
         "sidepostblocks": "",
         "hassidepost": false,
+        "numblockssidepre": 4,
+        "numblockssidepost": 4,
         "addblockbutton": "",
         "holland": {
             "hasfeaturedcourses": false,
@@ -61,16 +65,22 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{> theme_boost/navbar }}
-
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers frontpage-layout drag-container">
+        {{> theme_holland/theme/adminbar }}
+        {{> theme_holland/theme/navbar }}
         <div id="topofscroll" class="main-inner">
 
             {{{ output.full_header }}}
 
             <div id="page-content" class="pb-3 d-print-block">
 
-                <section id="frontpage-blocks-before" class="frontpage-blocks mb-3" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
+                {{#addpreblockbutton}}
+                    <div class="preblockbutton">
+                        {{{ addpreblockbutton }}}
+                    </div>
+                {{/addpreblockbutton}}
+
+                <section id="frontpage-blocks-before" class="frontpage-blocks row row-cols-1 row-cols-sm-{{numblockssidepresm}} row-cols-lg-{{numblockssidepre}} g-4" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
                     {{{ sidepreblocks }}}
                 </section>
 
@@ -86,14 +96,14 @@
                 </div>
 
                 {{> theme_holland/theme/frontpage/featuredcourses }}
-                <section id="frontpage-blocks-after" class="frontpage-blocks mt-3" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
+                <section id="frontpage-blocks-after" class="frontpage-blocks row row-cols-1 row-cols-sm-{{numblockssidepostsm}} row-cols-lg-{{numblockssidepost}} g-4 mt-3" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
                     {{{ sidepostblocks }}}
                 </section>
-                {{#addblockbutton}}
-                <div class="d-print-none mt-3">
-                    {{{ addblockbutton }}}
-                </div>
-                {{/addblockbutton}}
+                {{#addpostblockbutton}}
+                    <div class="postblockbutton">
+                        {{{ addpostblockbutton }}}
+                    </div>
+                {{/addpostblockbutton}}
 
             </div>
         </div>

@@ -15,17 +15,28 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template core_course/coursecard
+    @template theme_holland/theme/categorycards
 
-    Holland theme override: delegates to the shared coursecard partial.
+    This template renders the cards view for the myoverview block.
 
     Example context (json):
     {
-        "viewurl": "https://example.com/course/view.php?id=5",
-        "courseimage": "https://example.com/course1.jpg",
-        "fullname": "Introduction to Moodle",
-        "summary": "Learn the basics of Moodle.",
-        "coursecategory": "Miscellaneous"
+        "courses": [
+            {
+                "name": "Assignment due 1",
+                "viewurl": "https://moodlesite/course/view.php?id=2",
+                "courseimage": "https://moodlesite/pluginfile/123/course/overviewfiles/123.jpg",
+                "fullname": "course 3",
+                "hasprogress": true,
+                "progress": 10,
+                "coursecategory": "Miscellaneous"
+            }
+        ]
     }
 }}
-{{> theme_holland/theme/coursecard }}
+
+<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" data-region="card-deck" role="list">
+    {{#courses}}
+        {{> theme_holland/theme/coursecard }}
+    {{/courses}}
+</div>

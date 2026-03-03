@@ -14,16 +14,3 @@
         margin: 1rem;
     }
 }
-#page-site-index [data-region=blocks-column] {
-    width: 100%;
-}
-#frontpage-blocks-after {
-    aside.block-region {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        & > span {
-            display: none;
-        }
-    }
-}

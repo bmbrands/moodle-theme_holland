@@ -1,0 +1,30 @@
+#page.drawers.frontpage-layout {
+    .main-inner {
+        padding: 0;
+        background-color: transparent;
+    }
+    #region-main {
+        background-color: transparent;
+    }
+    div[role="main"] {
+        padding: 0;
+    }
+    .course-section .section-item {
+        background-color: $white;
+    }
+    #frontpage-available-course-list > h2 {
+        color: $white;
+    }
+    [data-region=blocks-column] {
+        width: auto;
+        float: none;
+        .block {
+            height: 100%;
+        }
+    }
+    .preblockbutton [data-region=add-block-button],
+    .postblockbutton [data-region=add-block-button] {
+        justify-content: end;
+    }
+
+}

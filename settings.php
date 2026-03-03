@@ -57,6 +57,26 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Number of blocks in side-pre region.
+    $setting = new admin_setting_configselect(
+        'theme_holland/numblockssidepre',
+        get_string('numblockssidepre', 'theme_holland'),
+        get_string('numblockssidepre_desc', 'theme_holland'),
+        4,
+        array_combine(range(1, 6), range(1, 6))
+    );
+    $page->add($setting);
+
+    // Number of blocks in side-post region.
+    $setting = new admin_setting_configselect(
+        'theme_holland/numblockssidepost',
+        get_string('numblockssidepost', 'theme_holland'),
+        get_string('numblockssidepost_desc', 'theme_holland'),
+        4,
+        array_combine(range(1, 6), range(1, 6))
+    );
+    $page->add($setting);
+
     // Featured courses enabled.
     $setting = new admin_setting_configcheckbox(
         'theme_holland/featuredcoursesenabled',
