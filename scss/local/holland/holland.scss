@@ -505,14 +505,7 @@
                 left: 0;
                 right: 0;
                 height: 100%;
-                background: linear-gradient(135deg,
-                    var(--ho-stijl-red) 0%,
-                    var(--ho-stijl-red) 30%,
-                    var(--ho-rietveld-blue) 30%,
-                    var(--ho-rietveld-blue) 60%,
-                    var(--ho-stijl-yellow) 60%,
-                    var(--ho-stijl-yellow) 100%
-                );
+                background: #f6f2ee;
                 z-index: -1;
                 display: block !important;
             }

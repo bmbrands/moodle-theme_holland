@@ -1,0 +1,18 @@
+.modchoosercontent .optionscontainer .option {
+    border: 2px solid $secondary;
+    height: 100%;
+
+    .optionicon {
+        position: absolute;
+        bottom: 0;
+        right: 0.5rem;
+        transform: translate(0%, 50%);
+        background-color: $white;
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+
+    }
+}
