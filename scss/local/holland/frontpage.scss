@@ -26,3 +26,22 @@
     }
 
 }
+
+// Hide empty frontpage containers when not editing.
+// The .editing class is on <body>, so these rules must be outside the #page scope.
+body:not(.editing) #page.drawers.frontpage-layout {
+    // Hide the region-main-box when it contains no meaningful content.
+    #region-main-box {
+        &:not(:has(.course-section, #frontpage-course-list, #frontpage-available-course-list, #frontpage-category-names, #frontpage-category-combo, #site-news-forum, .course-search-form)) {
+            display: none;
+        }
+    }
+
+    // Hide the empty frontpage section (section-1) when it has no activities
+    // and no summary content.
+    .sitetopic {
+        .course-section .section-item:not(:has(.activity, .summarytext, .summary img)) {
+            display: none;
+        }
+    }
+}

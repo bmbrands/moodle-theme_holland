@@ -55,7 +55,7 @@ $numblockssidepostsm = min(2, $numblockssidepost);
 
 $templatecontext = [
     'sitename' => format_string(
-        $SITE->shortname,
+        $SITE->fullname,
         true,
         ['context' => context_course::instance(SITEID), 'escape' => false]
     ),

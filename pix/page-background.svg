@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Subtle off-white base -->
+  <rect width="200" height="200" fill="#F8F9FA"/>
+
+  <!-- Thin grid lines (Mondrian-inspired, seamless at tile edges) -->
+  <line x1="0" y1="0" x2="200" y2="0" stroke="#E9ECEF" stroke-width="1"/>
+  <line x1="0" y1="0" x2="0" y2="200" stroke="#E9ECEF" stroke-width="1"/>
+
+  <!-- Subtle color accents at very low opacity -->
+  <rect x="0" y="0" width="60" height="60" fill="#E63946" opacity="0.025"/>
+  <rect x="140" y="140" width="60" height="60" fill="#1D3557" opacity="0.03"/>
+  <rect x="80" y="0" width="40" height="30" fill="#F1C40F" opacity="0.03"/>
+
+  <!-- Small geometric accents -->
+  <rect x="55" y="55" width="6" height="6" fill="none" stroke="#E63946" stroke-width="0.5" opacity="0.1"/>
+  <rect x="135" y="135" width="6" height="6" fill="none" stroke="#1D3557" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Tiny cross motif (De Stijl) -->
+  <g opacity="0.06" fill="#14213D">
+    <rect x="97" y="95" width="6" height="2"/>
+    <rect x="99" y="93" width="2" height="6"/>
+  </g>
+
+  <!-- Subtle dots -->
+  <circle cx="30" cy="170" r="1.5" fill="#006BA6" opacity="0.06"/>
+  <circle cx="170" cy="30" r="1.5" fill="#FF6B35" opacity="0.06"/>
+</svg>

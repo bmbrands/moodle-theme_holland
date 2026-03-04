@@ -505,7 +505,10 @@
                 left: 0;
                 right: 0;
                 height: 100%;
-                background: #f6f2ee;
+                background: linear-gradient(to bottom right, #d0dfef 0%, #dce8f5 15%, #b8d0ea 35%, #c9c8e0 55%, #d8c5d8 75%, #e2c8d4 100%);
+                background-size: 150%;
+                background-position: top left;
+                background-repeat: repeat;
                 z-index: -1;
                 display: block !important;
             }
