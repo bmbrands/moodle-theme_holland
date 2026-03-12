@@ -2,6 +2,19 @@
     max-width: $holland-maxwidth;
 }
 
+.bg-tool {
+    background: #f9fafb;
+    padding: 2rem;
+        max-width: $holland-maxwidth;
+    margin: 0 auto;
+
+}
+
+#page-mod-teachingtools-view .context-header-container,
+#page-mod-teachingtools-view #site-header {
+    display: none !important;
+}
+
 // Teaching Tools Intro Pages
 .tt-intro {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -10,6 +23,10 @@
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    max-width: $holland-maxwidth;
+    margin: 0 auto;
 
     *,
     *::before,
@@ -21,10 +38,12 @@
     .tt-hero {
         position: relative;
         overflow: hidden;
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
         padding: 5rem 1.5rem 4rem;
-        background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%);
+        // background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%);
         text-align: center;
-        color: #fff;
+        // color: #fff;
 
         .tt-hero-blobs {
             position: absolute;
@@ -67,7 +86,7 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 1.5rem;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgb(143 143 143 / 15%);
             border-radius: 1.25rem;
             display: flex;
             align-items: center;
@@ -82,7 +101,7 @@
 
             i {
                 font-size: 2rem;
-                color: #fff;
+                color: #000000;
             }
         }
 
@@ -114,7 +133,7 @@
 
         .tt-hero-description {
             font-size: 1.125rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: #000;
             max-width: 600px;
             margin: 0 auto 2rem;
         }
