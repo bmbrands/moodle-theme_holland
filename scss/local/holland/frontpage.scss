@@ -1,7 +1,9 @@
-#page.drawers.frontpage-layout {
+body #page.drawers.frontpage-layout {
+    padding: 0;
     .main-inner {
         padding: 0;
         background-color: transparent;
+        max-width: none;
     }
     #region-main {
         background-color: transparent;
@@ -13,9 +15,25 @@
         background-color: $white;
     }
 
+    #frontpage-available-course-list,
+    #featuredcourses {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 4rem 0;
+        & > h2 {
+            @extend .gradient-text;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+
     [data-region=blocks-column] {
         width: auto;
         float: none;
+        max-width: calc(80rem + 2rem); // Account for padding
+        margin: 0 auto;
+        padding-top: 5rem;
+        padding-bottom: calc(var(--bs-gutter-y) + 5rem);
         .block {
             height: 100%;
         }
@@ -24,7 +42,27 @@
     .postblockbutton [data-region=add-block-button] {
         justify-content: end;
     }
+}
+body.notloggedin #page.drawers.frontpage-layout .main-inner {
+    margin-top: 0;
+}
 
+// Reusable block card style (replaces Tailwind: bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg)
+.block-frontpage {
+    background-color: $white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    .dark & {
+        background-color: #1e293b; // slate-800
+    }
+}
+
+.wrapper-gray {
+    background-color: #f9fafb;
+}
+.frontpage-blocks-before .block {
+    @extend .block-frontpage;
 }
 
 // Hide empty frontpage containers when not editing.

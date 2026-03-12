@@ -1,3 +1,15 @@
+.holland {
+    font-family: var(--ho-font-geometric);
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        font-family: var(--ho-font-modern);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+    }
+}
+
+
 .overly {
     position: relative;
     z-index: 1;
@@ -22,6 +34,10 @@
 
     @include media-breakpoint-only(xl) {
         font-size: 3rem
+    }
+
+    &:hover {
+        text-decoration: none;
     }
 }
 

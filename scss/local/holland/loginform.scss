@@ -1,0 +1,155 @@
+// Login form styling – portfolio contact-form inspired.
+// All rules scoped under .loginform so they only affect the login form.
+
+.loginform {
+    background-color: $white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow:
+        0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    // --- Heading ---
+
+    .login-heading {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    // --- Form controls ---
+
+    .form-control,
+    .form-control-lg,
+    .custom-select {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid #d1d5db; // gray-300
+        background-color: #f9fafb; // gray-50
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+
+        &:focus {
+            border-color: transparent;
+            box-shadow: 0 0 0 2px #d946ef; // primary-500 ring
+            background-color: $white;
+        }
+
+        &::placeholder {
+            color: #9ca3af; // gray-400
+        }
+    }
+
+    // --- Submit button ---
+
+    .login-form-submit {
+        .btn {
+            width: 100%;
+            padding: 0.875rem 1.5rem;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, #d946ef, #06b6d4);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(#d946ef, 0.25);
+            transition: opacity 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                opacity: 0.9;
+                box-shadow: 0 20px 25px -5px rgba(#d946ef, 0.3);
+                background: linear-gradient(135deg, #d946ef, #06b6d4);
+                color: #fff;
+            }
+        }
+    }
+
+    // --- Secondary buttons (guest, signup, cookies) ---
+
+    .btn-secondary {
+        border-radius: 0.75rem;
+        padding: 0.625rem 1.5rem;
+        border: 1px solid #d1d5db;
+        background-color: #f9fafb;
+        color: #374151;
+        font-weight: 500;
+        transition: border-color 0.3s, color 0.3s;
+
+        &:hover {
+            border-color: #d946ef;
+            color: #d946ef;
+            background-color: #f9fafb;
+        }
+    }
+
+    // --- Dividers ---
+
+    .login-divider {
+        border-top: 1px solid #e5e7eb; // gray-200
+        margin: 1.5rem 0;
+    }
+
+    // --- Identity provider buttons ---
+
+    .login-identityprovider-btn {
+        border-radius: 0.75rem;
+        border: 1px solid #d1d5db;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+        transition: border-color 0.3s, box-shadow 0.3s;
+
+        &:hover {
+            border-color: #d946ef;
+            box-shadow: 0 0 0 2px rgba(#d946ef, 0.15);
+        }
+    }
+
+    // --- Forgot password link ---
+
+    .login-form-forgotpassword a {
+        color: #d946ef;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #a21caf;
+        }
+    }
+
+    // --- Signup link ---
+
+    .login-signup .btn {
+        border-radius: 0.75rem;
+    }
+
+    // --- Instructions ---
+
+    .login-instructions {
+        color: #4b5563;
+        font-size: 0.9375rem;
+    }
+
+    // --- Logo image ---
+
+    .login-logo {
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        img {
+            max-height: 5rem;
+        }
+    }
+
+    // --- Language menu & cookies bottom bar ---
+
+    .d-flex {
+        align-items: center;
+        gap: 0.5rem;
+    }
+}

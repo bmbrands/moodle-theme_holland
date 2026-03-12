@@ -77,6 +77,8 @@ $templatecontext = [
     'sidepostblocks' => $sidepostblocks,
     'hassidepost' => $hassidepost,
     'holland' => $holland,
+    'loggedin' => isloggedin(),
+    'loginurl' => new moodle_url('/login/index.php'),
 ];
 
 echo $OUTPUT->render_from_template('theme_holland/theme/frontpage', $templatecontext);

@@ -131,6 +131,7 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'overflow' => $overflow,
     'headercontent' => $headercontent,
+    'isadminsearch' => $PAGE->bodyid == 'page-admin-search',
     'addblockbutton' => $addblockbutton,
     'holland' => $holland,
 ];

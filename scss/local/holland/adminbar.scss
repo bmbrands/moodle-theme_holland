@@ -28,7 +28,7 @@ $adminbarhovercolor: #72aee6;
         background: $adminbarbgcolor;
 
         .adminbar-inner {
-            max-width: $course-content-maxwidth;
+            max-width: calc(80rem + 2rem); // Account for padding
             margin: 0 auto;
         }
 
@@ -55,7 +55,8 @@ $adminbarhovercolor: #72aee6;
             top: 1px;
         }
 
-        .secondary-navigation {
+        .secondary-navigation,
+        .primary-navigation {
             padding: 0;
             .navigation {
                 border-bottom: 0;
@@ -67,6 +68,7 @@ $adminbarhovercolor: #72aee6;
                     margin: 0 auto;
                     .nav-link {
                         border-radius: initial;
+                        border-top : 0;
                     }
                 }
             }

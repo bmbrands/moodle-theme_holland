@@ -1,0 +1,120 @@
+// Holland custom footer
+// Styled after the portfolio design footer (bg-gray-900, gradient accents).
+
+.holland-footer {
+    background-color: #111827; // gray-900
+    color: #fff;
+    padding: 4rem 0 0;
+    margin: 0 -1rem;
+}
+
+.holland-footer-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.holland-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// --- Brand column ---
+
+.holland-footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.holland-footer-logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.holland-footer-tagline {
+    color: #9ca3af; // gray-400
+    margin: 0;
+}
+
+.holland-footer-version {
+    color: #6b7280; // gray-500
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+// --- Links column ---
+
+.holland-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.holland-footer-link {
+    a {
+        color: #9ca3af;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #d946ef;
+        }
+    }
+}
+
+// --- Meta column ---
+
+.holland-footer-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .holland-footer-logininfo {
+        color: #9ca3af;
+
+        a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: #d946ef;
+            }
+        }
+    }
+}
+
+// --- Bottom bar ---
+
+.holland-footer-bottom {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(#fff, 0.1);
+}
+
+.holland-footer-copy {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin: 0;
+    text-align: center;
+}
+
+// --- Debug ---
+
+.holland-footer-debug {
+    background-color: #0f172a; // slate-950
+    color: #d1d5db;
+
+    .container-fluid {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}

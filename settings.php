@@ -77,6 +77,16 @@ if ($ADMIN->fulltree) {
     );
     $page->add($setting);
 
+    // Frontpage course limit.
+    $setting = new admin_setting_configselect(
+        'theme_holland/frontpagecourselimit',
+        get_string('frontpagecourselimit', 'theme_holland'),
+        get_string('frontpagecourselimit_desc', 'theme_holland'),
+        8,
+        array_combine(range(2, 20), range(2, 20))
+    );
+    $page->add($setting);
+
     // Featured courses enabled.
     $setting = new admin_setting_configcheckbox(
         'theme_holland/featuredcoursesenabled',

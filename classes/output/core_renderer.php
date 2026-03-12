@@ -66,14 +66,17 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $header = new \stdClass();
 
         if ($this->page->pagelayout == 'course') {
+            $issectionpage = strpos($this->page->pagetype, 'course-view-section-') === 0;
             $header->pagename = format_string($COURSE->fullname);
-            $header->courseimage = $this->get_course_header_image_url($COURSE);
             $header->navbar = $this->navbar();
             $header->contextid = $this->page->context->id;
             $header->courseid = $COURSE->id;
-            $header->coursesummary = format_text($COURSE->summary, $COURSE->summaryformat);
             $header->headeractions = $this->page->get_header_actions();
             $header->canedit = has_capability('moodle/course:update', $this->page->context);
+            if (!$issectionpage) {
+                $header->courseimage = $this->get_course_header_image_url($COURSE);
+                $header->coursesummary = format_text($COURSE->summary, $COURSE->summaryformat);
+            }
         }
         $content .= $this->render_from_template('theme_holland/theme/course_header', $header);
         return $content;
@@ -164,6 +167,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         // Inject a CSS variable override so holland.scss picks up the selected font.
         $output .= '<style>:root { --ho-font-modern: \'' . $fontname . '\', \'Helvetica Neue\', sans-serif; }</style>';
+        $output .= '<style>:root { --ho-font-geometric: \'' . $fontname . '\', \'Arial\', sans-serif; }</style>';
 
         return $output;
     }

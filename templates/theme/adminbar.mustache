@@ -40,6 +40,13 @@
                     </div>
                 {{/secondarymoremenu}}
             {{/isadminsearch}}
+            {{#isadminsearch}}
+                {{#primarymoremenu}}
+                    <div class="primary-navigation">
+                        {{> core/moremenu}}
+                    </div>
+                {{/primarymoremenu}}
+            {{/isadminsearch}}
             <div class="ms-md-auto">
                 {{{output.edit_switch}}}
             </div>

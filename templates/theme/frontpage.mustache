@@ -67,10 +67,15 @@
 
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers frontpage-layout drag-container">
         {{> theme_holland/theme/adminbar }}
-        {{> theme_holland/theme/navbar }}
+        {{#loggedin}}
+            {{> theme_holland/theme/navbar }}
+        {{/loggedin}}
         <div id="topofscroll" class="main-inner">
 
             {{{ output.full_header }}}
+            {{^loggedin}}
+            {{> theme_holland/theme/homebanner }}
+            {{/loggedin}}
 
             <div id="page-content" class="pb-3 d-print-block">
 
@@ -79,10 +84,11 @@
                         {{{ addpreblockbutton }}}
                     </div>
                 {{/addpreblockbutton}}
-
-                <section id="frontpage-blocks-before" class="frontpage-blocks row row-cols-1 row-cols-sm-{{numblockssidepresm}} row-cols-lg-{{numblockssidepre}} g-4" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
-                    {{{ sidepreblocks }}}
-                </section>
+                <div class="wrapper-gray">
+                    <section id="frontpage-blocks-before" class="frontpage-blocks frontpage-blocks-before row row-cols-1 row-cols-sm-{{numblockssidepresm}} row-cols-lg-{{numblockssidepre}} g-4" data-region="blocks-column" aria-label="{{#str}}blocks{{/str}}">
+                        {{{ sidepreblocks }}}
+                    </section>
+                </div>
 
                 <div id="region-main-box">
                     <div id="region-main">

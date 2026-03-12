@@ -29,14 +29,14 @@
         }
     }
 }}
-<header id="site-header" class="py-4 course-content-maxwidth">
-    <div class="container d-flex align-items-center">
-        <a href="{{{ config.wwwroot }}}/?redirect=0" class="d-inline-block pe-3" title="{{#str}}home{{/str}}">
+<header id="site-header" class="py-4 holland-maxwidth">
+    <div class="d-flex align-items-center">
+        <a href="{{{ config.wwwroot }}}/?redirect=0" class="sec-title sitename" title="{{#str}}home{{/str}}">
             {{# output.should_display_navbar_logo }}
                 <img src="{{output.get_compact_logo_url}}" class="logo me-1" alt="{{sitename}}">
             {{/ output.should_display_navbar_logo }}
             {{^ output.should_display_navbar_logo }}
-                <div class="sec-title sitename"><span class="color">{{{ sitename }}}</span></div>
+                <span class="text-black">Reasons to </span><span class="gradient-text">create</span>
             {{/ output.should_display_navbar_logo }}
         </a>
 

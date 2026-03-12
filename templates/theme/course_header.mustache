@@ -63,14 +63,16 @@
             <div class="col">
                 <div id="page-header-content">
                     {{! Title. }}
-                    {{#pagename}}
-                    <h1 id="page-header-title" class="align-self-start d-inline-block">
-                        {{{pagename}}}
-                    </h1>
-                    {{/pagename}}
+                    <div id="titlecontainer" class="d-flex align-items-center">
+                        {{#pagename}}
+                            <h1 id="page-header-title" class="align-self-start d-inline-block me-2">
+                                {{{pagename}}}
+                            </h1>
+                        {{/pagename}}
+                    </div>
                     {{! Summary. }}
                     {{#coursesummary}}
-                    <div id="page-header-summary">
+                    <div id="page-header-summary" class="display-11 my-3 mx-1">
                         {{{coursesummary}}}
                     </div>
                     {{/coursesummary}}

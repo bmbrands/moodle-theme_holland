@@ -24,44 +24,6 @@
         display: none;
     }
 
-    .mform {
-        // Disable hiding of form elements.
-        .collapsed .fcontainer {
-            display: block !important; /* stylelint-disable-line declaration-no-important */
-        }
-        // Remove borders.
-        fieldset {
-            border: none;
-        }
-
-        // Smaller instructions.
-        .fdescription.required,
-        .form-control-static {
-            font-size: small;
-        }
-
-        // Consistant size for inputs.
-        .form-control,
-        .custom-select {
-            width: 100%;
-        }
-
-
-        // Change exclamations circles to asterix.
-        .fa-exclamation-circle:before {
-            content: "*";
-        }
-
-        // Client requests.
-        .fdescription.required {
-            margin-left: 1.5rem;
-        }
-
-        // Button margin.
-        #fgroup_id_buttonar .felement {
-            margin-left: -.8rem; // Margic number.
-        }
-    }
 
 
     // No footer.
@@ -111,35 +73,6 @@
         position: relative;
         .login-heading {
             display: none;
-        }
-        &::before {
-            content: "";
-            position: absolute;
-            background-image: url([[pix:theme|login-background]]);
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            top: 0;
-            left: 0;
-            transform: translate(-15%, 0%);
-            width: 150%;
-            height: 700px;
-        }
-        .holland-logo {
-            position: relative;
-            overflow: visible;
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: translate(-100%, -80%);
-                z-index: 2;
-                width: 196px;
-                height: 139px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-image: url([[pix:theme|reasonsto]]);
-            }
         }
         .loginform {
             position: relative;

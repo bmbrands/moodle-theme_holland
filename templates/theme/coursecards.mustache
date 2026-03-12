@@ -35,8 +35,13 @@
     }
 }}
 
-<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" data-region="card-deck" role="list">
+<div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4" data-region="card-deck" role="list">
     {{#courses}}
         {{> theme_holland/theme/coursecard }}
     {{/courses}}
 </div>
+{{#showallurl}}
+<div class="mt-4 mb-5 text-center">
+    <a href="{{{showallurl}}}" class="btn btn-gradient">{{#str}}showallcourses, theme_holland{{/str}}</a>
+</div>
+{{/showallurl}}

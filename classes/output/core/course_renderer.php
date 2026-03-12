@@ -206,16 +206,22 @@ class course_renderer extends \core_course_renderer {
             // Print link to create a new course, for the 1st available category.
             return $this->add_new_course_button();
         }
-        return $this->coursecat_course_cards($courses);
+
+        $limit = (int) get_config('theme_holland', 'frontpagecourselimit') ?: 8;
+        $limitedcourses = array_slice($courses, 0, $limit);
+        $showall = count($courses) > $limit;
+
+        return $this->coursecat_course_cards($limitedcourses, $showall);
     }
 
     /**
      * Render course cards using the shared coursecard template.
      *
      * @param array $courses list of courses
+     * @param bool $showall whether to show a "show all" link
      * @return string HTML template
      */
-    protected function coursecat_course_cards($courses) {
+    protected function coursecat_course_cards($courses, $showall = false) {
         $template = new stdClass;
         $template->courses = [];
         foreach ($courses as $course) {
@@ -223,6 +229,10 @@ class course_renderer extends \core_course_renderer {
             $context = \context_course::instance($course->id);
             $exporter = new course_summary_exporter($course, ['context' => $context]);
             $template->courses[] = $exporter->export($this->output);
+        }
+
+        if ($showall) {
+            $template->showallurl = (new moodle_url('/course/index.php'))->out(false);
         }
 
         return $this->render_from_template('theme_holland/theme/coursecards', $template);

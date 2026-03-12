@@ -1,0 +1,239 @@
+// Homebanner – hero section on the frontpage.
+// Inspired by the portfolio design hero (section#home).
+
+.homebanner {
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    min-height: 70vh;
+    padding: 1rem 0;
+}
+
+.homebanner-login {
+    top: 0;
+    z-index: 2;
+    text-align: right;
+    padding-top: 1rem;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto 3rem;
+}
+
+.homebanner-login-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(#d946ef, 0.25);
+}
+
+.homebanner-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.homebanner-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @media (min-width: 992px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+// --- Left: text content ---
+
+.homebanner-content {
+    animation: homebanner-slide-up 0.5s ease-out;
+}
+
+.homebanner-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: rgba(#d946ef, 0.12);
+    color: #c026d3;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.homebanner-badge-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    animation: homebanner-pulse 2s infinite;
+}
+
+.homebanner-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    @extend .gradient-text;
+}
+
+.homebanner-subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.75rem);
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.homebanner-description {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    max-width: 32rem;
+}
+
+.homebanner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.homebanner-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: 0 10px 15px -3px rgba(#d946ef, 0.25);
+    transition: opacity 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        opacity: 0.9;
+        box-shadow: 0 20px 25px -5px rgba(#d946ef, 0.3);
+    }
+}
+
+.homebanner-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: 2px solid #d1d5db;
+    transition: border-color 0.3s, color 0.3s;
+
+    &:hover {
+        border-color: #d946ef;
+        color: #d946ef;
+    }
+}
+
+// --- Right: illustration ---
+
+.homebanner-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 992px) {
+        justify-content: flex-end;
+    }
+}
+
+.homebanner-image-glow {
+    position: absolute;
+    inset: -1rem;
+    background: linear-gradient(to right, #d946ef, #06b6d4);
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.25;
+    animation: homebanner-glow 2s ease-in-out infinite alternate;
+}
+
+.homebanner-image-container {
+    position: relative;
+    width: 18rem;
+    height: 18rem;
+
+    @media (min-width: 576px) {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    @media (min-width: 992px) {
+        width: 24rem;
+        height: 24rem;
+    }
+}
+
+.homebanner-image-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #d946ef, #06b6d4);
+    border-radius: 50%;
+    animation: homebanner-float 6s ease-in-out infinite;
+}
+
+.homebanner-image-frame {
+    position: absolute;
+    inset: 0.5rem;
+    background: #f3f4f6;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.homebanner-image .icon{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+// --- Animations ---
+
+@keyframes homebanner-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes homebanner-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes homebanner-glow {
+    0% {
+        box-shadow: 0 0 20px rgba(#d946ef, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 40px rgba(#06b6d4, 0.4);
+    }
+}
+
+@keyframes homebanner-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

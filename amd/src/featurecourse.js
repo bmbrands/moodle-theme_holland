@@ -38,11 +38,10 @@ class FavouriteCourse {
         if (!document.body.classList.contains('path-course-view') || !document.body.classList.contains('pagelayout-course')) {
             return;
         }
-        this.courseHeader = this.rootElement.querySelector('#page-header-title');
+        this.courseHeader = this.rootElement.querySelector('#titlecontainer');
         this.buttonContainer = document.createElement('div');
-        this.buttonContainer.classList.add('d-inline-block', 'ms-4');
         // Insert the button container after the course title.
-        this.courseHeader.parentNode.insertBefore(this.buttonContainer, this.courseHeader.nextSibling);
+        this.courseHeader.appendChild(this.buttonContainer);
         this.render();
         this.addEventListeners();
     }
