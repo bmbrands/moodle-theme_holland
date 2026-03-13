@@ -7,10 +7,48 @@
         height: 100%;
     }
     #page {
-        background-image: url([[pix:theme|background]]);
-        background-size: cover;
-        background-position: center;
-        background-color: transparent;
+        background: #f8fafc;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+
+        // Floating gradient blurs (portfolio hero style).
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        // Primary magenta blob – top-left.
+        &::before {
+            width: 22rem;
+            height: 22rem;
+            top: 5%;
+            left: 5%;
+            background: rgba(#d946ef, 0.25);
+        }
+
+        // Accent cyan blob – bottom-right.
+        &::after {
+            width: 28rem;
+            height: 28rem;
+            bottom: 5%;
+            right: 5%;
+            background: rgba(#06b6d4, 0.25);
+            animation-delay: -4s;
+        }
+    }
+
+    // Keep form content above the blobs.
+    #page-content,
+    .login-wrapper {
+        position: relative;
+        z-index: 1;
     }
 
     // Vertical center of form.
@@ -24,12 +62,15 @@
         display: none;
     }
 
-
-
     // No footer.
     #page-footer {
         display: none;
     }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 // Forgoten password pages.
@@ -58,8 +99,9 @@
 }
 #page-login-signup {
     .login-container:before {
-        background-color: #fff;
-        border-radius: 30px;
+        background-color: rgba(#fff, 0.8);
+        backdrop-filter: blur(12px);
+        border-radius: 1.5rem;
         background-image: none;
         height: 100%;
     }
@@ -77,7 +119,8 @@
         .loginform {
             position: relative;
             z-index: 1;
+            backdrop-filter: blur(8px);
+            background-color: rgba(#fff, 0.85);
         }
-
     }
 }
