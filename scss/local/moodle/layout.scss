@@ -1,6 +1,7 @@
 @include media-breakpoint-up(sm) {
     #page.drawers .main-inner {
         margin-top: 1.5rem;
+        max-width: 80rem;
     }
 }
 
@@ -18,11 +19,18 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.holland .header-maxwidth {
+    padding: 0;
+}
+
 @include media-breakpoint-up(md) {
 
     #page-wrapper {
         height: auto;
         position: relative;
+    }
+    .holland .secondary-navigation .navigation {
+        margin: 0;
     }
 
     // Add some padding for the drawer toggle buttons
