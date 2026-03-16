@@ -1,0 +1,78 @@
+{{!
+    @template filter_promo/promo_card
+
+    Renders a plugin promo section that blends into the page.
+
+    Context variables required:
+    * component - Frankenstyle plugin name (e.g. local_goodbye)
+    * title - Plugin display name
+    * description - Short description of the plugin
+    * icon - FontAwesome icon class
+    * color - Accent color
+    * imageurl - URL to the plugin image (optional)
+    * github - GitHub repository URL (optional)
+    * moodleplugins - Moodle plugins directory URL (optional)
+    * download - Download ZIP URL (optional)
+    * features - Array of feature badges with icon and label (optional)
+    * hasgithub - Whether github link exists
+    * hasmoodleplugins - Whether moodle plugins link exists
+    * hasdownload - Whether download link exists
+    * hasfeatures - Whether features array exists
+
+    Example context (json):
+    {
+        "component": "local_goodbye",
+        "title": "Goodbye",
+        "description": "Allows users to self-delete their Moodle accounts.",
+        "icon": "fas fa-hand-wave",
+        "color": "#d946ef",
+        "imageurl": "/local/goodbye/pix/promo.svg",
+        "github": "https://github.com/bmbrands/moodle-local_goodbye",
+        "download": "https://github.com/bmbrands/moodle-local_goodbye/archive/refs/heads/main.zip",
+        "hasgithub": true,
+        "hasdownload": true,
+        "hasfeatures": true,
+        "features": [
+            {"icon": "fas fa-user-minus", "label": "Self-service"}
+        ]
+    }
+}}
+<div class="promo-block" data-component="{{component}}">
+    <div class="promo-block-header">
+        <span class="promo-block-icon" style="color: {{color}};">
+            <i class="{{icon}}"></i>
+        </span>
+        <h3 class="promo-block-title">{{title}}</h3>
+    </div>
+    <p class="promo-block-description">{{description}}</p>
+    {{#hasfeatures}}
+    <div class="promo-block-features">
+        {{#features}}
+        <span class="promo-block-badge">
+            <i class="{{icon}}"></i>
+            {{label}}
+        </span>
+        {{/features}}
+    </div>
+    {{/hasfeatures}}
+    <div class="promo-block-links">
+        {{#hasgithub}}
+        <a href="{{github}}" class="promo-block-link" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+            {{#str}}viewongithub, filter_promo{{/str}}
+        </a>
+        {{/hasgithub}}
+        {{#hasmoodleplugins}}
+        <a href="{{moodleplugins}}" class="promo-block-link" target="_blank" rel="noopener">
+            <i class="fas fa-puzzle-piece"></i>
+            {{#str}}moodleplugins, filter_promo{{/str}}
+        </a>
+        {{/hasmoodleplugins}}
+        {{#hasdownload}}
+        <a href="{{download}}" class="promo-block-link" target="_blank" rel="noopener">
+            <i class="fas fa-download"></i>
+            {{#str}}download, filter_promo{{/str}}
+        </a>
+        {{/hasdownload}}
+    </div>
+</div>
