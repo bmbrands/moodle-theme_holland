@@ -383,4 +383,95 @@
             }
         }
     }
+
+    .actionarea {
+        margin-top: 3rem;
+    }
+}
+
+.teachingapp .actionarea {
+    margin-top: 3rem !important;
+}
+
+.tt-cards .tt-card {
+    position: relative;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.tt-cards .tt-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    text-decoration: none;
+    color: #fff;
+}
+.tt-cards .tt-card:hover .tt-card-bg {
+    opacity: 1;
+}
+.tt-cards .tt-card:hover .tt-desc {
+    color: rgba(255,255,255,0.85);
+}
+.tt-cards .tt-card:hover .tt-icon-box {
+    transform: scale(1.1);
+}
+.tt-cards .tt-card:hover .tt-link {
+    color: #fff;
+}
+.tt-cards .tt-card:hover .tt-link .fa-arrow-right {
+    transform: translateX(4px);
+}
+.tt-card-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.tt-card-inner {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.tt-icon-box {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease;
+}
+.tt-icon-box i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+.tt-desc {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+.tt-link {
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+.tt-link .fa-arrow-right {
+    transition: transform 0.3s ease;
+}
+.tt-gradient-text {
+    background: linear-gradient(135deg, #d946ef, #06b6d4, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
