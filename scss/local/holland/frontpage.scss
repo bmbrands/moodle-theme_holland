@@ -17,9 +17,9 @@ body #page.drawers.frontpage-layout {
 
     #frontpage-available-course-list,
     #featuredcourses {
-        max-width: 80rem;
+        max-width: $holland-maxwidth;
         margin: 0 auto;
-        padding: 4rem 0;
+        padding: 4rem 0.75rem;
         & > h2 {
             @extend .gradient-text;
             font-size: 2.5rem;
@@ -30,7 +30,7 @@ body #page.drawers.frontpage-layout {
     [data-region=blocks-column] {
         width: auto;
         float: none;
-        max-width: calc(80rem + 2rem); // Account for padding
+        max-width: $holland-maxwidth;
         margin: 0 auto;
         padding-top: 5rem;
         padding-bottom: calc(var(--bs-gutter-y) + 5rem);
