@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="600" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="340" rx="24" fill="url(#bg)"/>
+  <text x="300" y="150" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="80" fill="white" opacity="0.2">🎨</text>
+  <text x="300" y="220" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="36" fill="white">Holland</text>
+  <text x="300" y="260" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="16" fill="white" opacity="0.8">Modern Moodle theme with portfolio frontpage</text>
+</svg>
