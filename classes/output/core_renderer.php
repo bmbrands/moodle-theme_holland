@@ -28,6 +28,7 @@ use html_writer;
 use moodle_url;
 use core_course_list_element;
 use theme_config;
+use core\navigation\navigation_node;
 
 /**
  * Theme renderer
@@ -37,6 +38,29 @@ use theme_config;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class core_renderer extends \theme_boost\output\core_renderer {
+
+    /**
+     * Renders the navbar, filtering out course section breadcrumb items.
+     *
+     * @return string HTML for the navbar.
+     */
+    public function navbar(): string {
+        $items = $this->page->navbar->get_items();
+        $filtered = array_values(array_filter($items, function($item) {
+            return $item->type !== navigation_node::TYPE_SECTION;
+        }));
+
+        // Re-set the "last" flag on the new last item.
+        foreach ($filtered as $item) {
+            $item->set_last(false);
+        }
+        if (!empty($filtered)) {
+            end($filtered)->set_last(true);
+        }
+
+        $templatecontext = ['get_items' => $filtered];
+        return $this->render_from_template('core/navbar', $templatecontext);
+    }
 
     /**
      * Wrapper for header elements.
@@ -76,6 +100,49 @@ class core_renderer extends \theme_boost\output\core_renderer {
             if (!$issectionpage) {
                 $header->courseimage = $this->get_course_header_image_url($COURSE);
                 $header->coursesummary = format_text($COURSE->summary, $COURSE->summaryformat);
+
+                // Category.
+                $category = \core_course_category::get($COURSE->category, IGNORE_MISSING);
+                $header->category = $category ? $category->get_formatted_name() : '';
+
+                // Custom fields (NOTVISIBLE fields like coursedesign are excluded automatically).
+                $cfhandler = \core_course\customfield\course_handler::create();
+                $customfields = [];
+                foreach ($cfhandler->get_instance_data($COURSE->id) as $data) {
+                    $value = $data->export_value();
+                    if (!is_null($value) && $value !== '') {
+                        $customfields[] = [
+                            'name' => $data->get_field()->get('name'),
+                            'value' => $value,
+                        ];
+                    }
+                }
+                $header->customfields = $customfields ?: false;
+
+                // Dates.
+                $dateformat = get_string('strftimedatefullshort', 'langconfig');
+                $header->startdate = $COURSE->startdate ? userdate($COURSE->startdate, $dateformat) : '';
+                $header->enddate = $COURSE->enddate ? userdate($COURSE->enddate, $dateformat) : '';
+
+                // Activity count.
+                $header->activitycount = count(get_fast_modinfo($COURSE)->get_cms());
+
+                // Teachers (enrolled users with course:update capability).
+                $coursecontext = \context_course::instance($COURSE->id);
+                $teachers = get_enrolled_users(
+                    $coursecontext,
+                    'moodle/course:update',
+                    0,
+                    'u.id, u.firstname, u.lastname, u.picture, u.imagealt, u.email'
+                );
+                $teacherlist = [];
+                foreach ($teachers as $teacher) {
+                    $teacherlist[] = [
+                        'fullname' => fullname($teacher),
+                        'picture' => $this->user_picture($teacher, ['size' => 50, 'link' => false, 'alttext' => false]),
+                    ];
+                }
+                $header->teachers = $teacherlist ?: false;
             }
         }
         $content .= $this->render_from_template('theme_holland/theme/course_header', $header);

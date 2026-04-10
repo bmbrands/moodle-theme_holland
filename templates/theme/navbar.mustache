@@ -29,23 +29,27 @@
         }
     }
 }}
-<header id="site-header" class="py-4 px-2 holland-maxwidth">
+<header id="site-header" class="py-lg-4 px-2 holland-maxwidth">
     <div class="d-flex align-items-center">
-        <a href="{{{ config.wwwroot }}}/?redirect=0" class="sec-title sitename" title="{{#str}}home{{/str}}">
-            {{# output.should_display_navbar_logo }}
-                <img src="{{output.get_compact_logo_url}}" class="logo me-1" alt="{{sitename}}">
-            {{/ output.should_display_navbar_logo }}
-            {{^ output.should_display_navbar_logo }}
-                <span class="text-black">Reasons to </span><span class="gradient-text">create</span>
-            {{/ output.should_display_navbar_logo }}
-        </a>
+        <div>
+            <a href="{{{ config.wwwroot }}}/?redirect=0" class="sec-title sitename" title="{{#str}}home{{/str}}">
+                {{# output.should_display_navbar_logo }}
+                    <img src="{{output.get_compact_logo_url}}" class="logo me-1" alt="{{sitename}}">
+                {{/ output.should_display_navbar_logo }}
+                {{^ output.should_display_navbar_logo }}
+                    <span class="text-black">Reasons to </span><span class="gradient-text">create</span>
+                {{/ output.should_display_navbar_logo }}
+            </a>
+        </div>
 
         <div class="ms-auto me-3 d-block d-flex align-items-center">
             {{! Custom menu }}
             <ul id="site-header-links" class="list-unstyled me-3 d-none d-lg-block">
                 {{{ output.custom_menu }}}
             </ul>
-            {{{ output.navbar_plugin_output }}}
+            <div class="d-none d-lg-flex">
+                {{{ output.navbar_plugin_output }}}
+            </div>
             <div class="d-none d-lg-inline">
                 {{{ output.search_box }}}
             </div>

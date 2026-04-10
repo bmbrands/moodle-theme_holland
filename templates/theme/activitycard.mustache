@@ -1,0 +1,193 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_holland/theme/activitycard
+
+    A Bootstrap card–based rendering of a single course activity (CM).
+    Designed to replace the default activity grid layout with a card
+    component that uses standard Bootstrap card, badge, and list-group
+    markup.
+
+    This template consumes the same context variables produced by
+    core_courseformat\output\local\content\cm so it can be wired up
+    as an override later.
+
+    Context variables required for this template:
+    * url              - string  Activity URL
+    * activityname     - string  Plain-text activity name
+    * modname          - string  Module type key (assign, forum, quiz …)
+    * pluginname       - string  Human-readable module type
+    * iconurl          - string  URL to the activity icon SVG/PNG
+    * iconpurpose      - string  Icon purpose CSS class (assessment, collaboration, content …)
+    * hasbadge         - bool    Whether to show an activity badge
+    * badgetext        - string  Badge label (e.g. "PDF", "3 unread")
+    * badgestyle       - string  Bootstrap badge class (bg-primary, bg-info …)
+    * description      - string  Short activity description / summary (HTML)
+    * hasdates         - bool    Whether dates are present
+    * dates            - array   {label, datestring} pairs
+    * hascompletion    - bool    Whether completion tracking is enabled
+    * iscomplete       - bool    Whether all conditions are met
+    * completiontext   - string  Button label (To do / Done)
+    * completionstyle  - string  Bootstrap badge class for the completion pill
+    * completiondetails - array  {description, done} condition list
+    * isrestricted     - bool    Whether availability restrictions exist
+    * restrictiontext  - string  Human-readable restriction summary (HTML)
+    * ishidden         - bool    Activity is hidden from students
+    * isstealth        - bool    Activity is in stealth mode
+    * editing          - bool    Teacher is in editing mode
+    * hascontrolmenu   - bool    Whether the edit action menu should render
+    * controlmenuhtml  - string  Pre-rendered action-menu HTML
+
+    Example context (json):
+    {
+        "url": "#",
+        "activityname": "Week 1 Assignment",
+        "modname": "assign",
+        "pluginname": "Assignment",
+        "iconurl": "",
+        "iconpurpose": "assessment",
+        "hasbadge": false,
+        "badgetext": "",
+        "badgestyle": "",
+        "description": "",
+        "hasdates": true,
+        "dates": [
+            {"label": "Opens:", "datestring": "18 March 2026, 9:00 AM"},
+            {"label": "Due:", "datestring": "1 April 2026, 11:59 PM"}
+        ],
+        "hascompletion": true,
+        "iscomplete": false,
+        "completiontext": "To do",
+        "completionstyle": "bg-light text-dark border",
+        "completiondetails": [
+            {"description": "Submit the assignment", "done": false},
+            {"description": "Receive a grade", "done": false}
+        ],
+        "isrestricted": false,
+        "restrictiontext": "",
+        "ishidden": false,
+        "isstealth": false,
+        "editing": false,
+        "hascontrolmenu": false,
+        "controlmenuhtml": ""
+    }
+}}
+<div class="card activity-card mb-3 {{#ishidden}}border-secondary opacity-75{{/ishidden}}{{#isstealth}}border-secondary opacity-75{{/isstealth}}"
+     data-activityname="{{activityname}}" data-region="activity-card">
+
+    {{! ── Card header: icon, name, badges, menu ── }}
+    <div class="card-header bg-white d-flex align-items-center py-2">
+        {{! Icon }}
+        <div class="activity-card-icon activityiconcontainer smaller {{iconpurpose}} courseicon me-2 flex-shrink-0">
+            {{#iconurl}}
+                <img src="{{{iconurl}}}" class="activityicon" alt="{{pluginname}}">
+            {{/iconurl}}
+            {{^iconurl}}
+                <span class="badge rounded-circle {{iconpurpose}} p-2">
+                    <span class="visually-hidden">{{pluginname}}</span>
+                </span>
+            {{/iconurl}}
+        </div>
+
+        {{! Name + inline badge }}
+        <div class="flex-grow-1 min-width-0">
+            <a href="{{{url}}}" class="card-link fw-bold text-truncate d-block stretched-link">
+                {{{activityname}}}
+            </a>
+            <span class="text-muted small">{{pluginname}}</span>
+        </div>
+
+        {{#hasbadge}}
+            <span class="badge rounded-pill {{badgestyle}} ms-2 flex-shrink-0">{{badgetext}}</span>
+        {{/hasbadge}}
+
+        {{! Visibility badges }}
+        {{#ishidden}}
+            <span class="badge rounded-pill bg-secondary ms-2 flex-shrink-0">
+                {{#str}}hiddenfromstudents{{/str}}
+            </span>
+        {{/ishidden}}
+        {{#isstealth}}
+            <span class="badge rounded-pill bg-secondary ms-2 flex-shrink-0">
+                {{#str}}hiddenoncoursepage{{/str}}
+            </span>
+        {{/isstealth}}
+
+        {{! Edit menu }}
+        {{#hascontrolmenu}}
+            <div class="ms-2 flex-shrink-0 position-relative z-1">
+                {{{controlmenuhtml}}}
+            </div>
+        {{/hascontrolmenu}}
+    </div>
+
+    {{! ── Card body: description, dates, restrictions ── }}
+    {{#description}}
+        <div class="card-body py-2">
+            <p class="card-text small">{{{description}}}</p>
+        </div>
+    {{/description}}
+
+    {{#hasdates}}
+        <ul class="list-group list-group-flush">
+            {{#dates}}
+                <li class="list-group-item py-2 d-flex justify-content-between align-items-center small">
+                    <span class="text-muted">{{label}}</span>
+                    <span>{{datestring}}</span>
+                </li>
+            {{/dates}}
+        </ul>
+    {{/hasdates}}
+
+    {{#isrestricted}}
+        <div class="card-body py-2 border-top">
+            <div class="d-flex align-items-start">
+                <span class="badge rounded-pill bg-warning text-dark me-2 flex-shrink-0 mt-1">
+                    {{#str}}restricted, core_availability{{/str}}
+                </span>
+                <span class="small">{{{restrictiontext}}}</span>
+            </div>
+        </div>
+    {{/isrestricted}}
+
+    {{! ── Card footer: completion ── }}
+    {{#hascompletion}}
+        <div class="card-footer bg-white d-flex align-items-center justify-content-between py-2">
+            <div class="d-flex align-items-center">
+                {{#iscomplete}}
+                    <span class="badge rounded-pill bg-success me-2">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </span>
+                {{/iscomplete}}
+                {{^iscomplete}}
+                    <span class="badge rounded-pill {{completionstyle}} me-2">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                    </span>
+                {{/iscomplete}}
+                <span class="small fw-semibold">{{completiontext}}</span>
+            </div>
+            {{#completiondetails}}
+                <span class="small text-muted">
+                    {{#done}}<i class="fa fa-check text-success me-1" aria-hidden="true"></i>{{/done}}
+                    {{^done}}<i class="fa fa-circle-o text-muted me-1" aria-hidden="true"></i>{{/done}}
+                    {{description}}
+                </span>
+            {{/completiondetails}}
+        </div>
+    {{/hascompletion}}
+
+</div>

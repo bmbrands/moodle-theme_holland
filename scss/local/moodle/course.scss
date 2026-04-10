@@ -21,15 +21,6 @@
     }
 }
 
-@include media-breakpoint-up(md) {
-    .course-header-image {
-        .course-header-image-bg {
-            width: 300px;
-            height: 300px;
-        }
-    }
-}
-
 .card {
     position: relative;
     .dashboard-card-img {
@@ -37,11 +28,5 @@
         max-width: 100%;
         background-size: 100%;
         background-repeat: no-repeat;
-    }
-}
-
-#page.drawers {
-    .main-inner {
-        //padding: 0;
     }
 }

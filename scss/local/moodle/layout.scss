@@ -23,6 +23,10 @@
     padding: 0;
 }
 
+#page.drawers .main-inner {
+    padding: 0 0.5rem;
+}
+
 @include media-breakpoint-up(md) {
 
     #page-wrapper {
@@ -48,6 +52,10 @@
             padding-left: 0;
             padding-right: 0;
         }
+    }
+    .holland .holland-footer {
+        margin-left: -1rem;
+        margin-right: -1rem;
     }
 }
 

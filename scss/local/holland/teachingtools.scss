@@ -1,4 +1,4 @@
-.holland .teachingapp {
+.holland .teachingapp:not(.fullscreen-app) {
     max-width: $holland-maxwidth;
 }
 
@@ -389,7 +389,7 @@
     }
 }
 
-.teachingapp .actionarea {
+.teachingapp:not(.fullscreen-app) .actionarea {
     margin-top: 3rem !important;
 }
 

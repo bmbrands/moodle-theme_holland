@@ -29,18 +29,75 @@
         "contextid": 1
     }
 }}
-<div id="page-header" {{#courseimage}} class="py-3" {{/courseimage}}>
+<div id="page-header" {{#courseimage}} class="pt-3" {{/courseimage}}>
     <div id="page-header-container" class="container-fluid p-0">
-        <div class="d-flex flex-wrap">
-            <div id="page-navbar">
-                {{{navbar}}}
+        <div class="d-flex flex-column flex-lg-row gap-lg-3">
+            <div class="flex-grow-1 min-width-0 order-1 order-lg-0">
+                <div id="page-header-content">
+                    <div class="d-flex flex-wrap gap-3">
+                        {{! Title. }}
+                        <div id="titlecontainer" class="d-flex flex-grow-1 align-items-start">
+                            {{#pagename}}
+                                <h1 id="page-header-title" class="align-self-start d-inline-block me-2">
+                                    {{{pagename}}}
+                                </h1>
+                            {{/pagename}}
+                        </div>
+                        {{#teachers}}
+                            <div class="course-info-teacher">
+                                {{{picture}}}
+                                <span class="course-info-value">{{fullname}}</span>
+                            </div>
+                        {{/teachers}}
+                    </div>
+                    {{! Course info. }}
+                    {{#category}}
+                    <div class="course-info d-flex flex-wrap gap-3 my-2">
+                        <div class="course-info-item course-info-category">
+                            <span class="course-info-label">{{#str}} category, moodle {{/str}}</span>
+                            <span class="course-info-value">{{category}}</span>
+                        </div>
+                        {{#activitycount}}
+                        <div class="course-info-item course-info-activities">
+                            <span class="course-info-label">{{#str}} activities, moodle {{/str}}</span>
+                            <span class="course-info-value"><span class="badge text-bg-secondary">{{activitycount}}</span></span>
+                        </div>
+                        {{/activitycount}}
+                        <div class="course-info-dates d-flex gap-3 w-100">
+                            {{#startdate}}
+                            <div class="course-info-item course-info-startdate">
+                                <span class="course-info-label">{{#str}} startdate, moodle {{/str}}</span>
+                                <span class="course-info-value"><span class="badge text-bg-secondary">{{startdate}}</span></span>
+                            </div>
+                            {{/startdate}}
+                            {{#enddate}}
+                            <div class="course-info-item course-info-enddate">
+                                <span class="course-info-label">{{#str}} enddate, moodle {{/str}}</span>
+                                <span class="course-info-value"><span class="badge text-bg-secondary">{{enddate}}</span></span>
+                            </div>
+                            {{/enddate}}
+                        </div>
+
+                        {{#customfields}}
+                        <div class="course-info-item course-info-customfield">
+                            <span class="course-info-label">{{name}}</span>
+                            <span class="course-info-value">{{{value}}}</span>
+                        </div>
+                        {{/customfields}}
+                    </div>
+                    {{/category}}
+                    {{! Summary. }}
+                    {{#coursesummary}}
+                        <div id="page-header-summary" class="display-11 my-3 mx-1">
+                            {{{coursesummary}}}
+                        </div>
+                    {{/coursesummary}}
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 order-lg-last text-center">
+            <div class="flex-shrink-0 text-center">
                 {{#courseimage}}
-                    <div class="mb-3 course-header-image position-relative">
-                        <div class="course-header-image-bg rounded" style="background-image: url('{{{courseimage}}}');"></div>
+                    <div class="course-header-image position-relative">
+                        <div class="course-header-image-bg" style="background-image: url('{{{courseimage}}}');"></div>
                         {{#canedit}}
                         <button class="btn btn-secondary btn-icon icon-no-margin course-image-edit-button"
                             data-action="course-image-edit-form"
@@ -57,25 +114,6 @@
                     {{#headeractions}}
                         <div class="header-action ms-2">{{{.}}}</div>
                     {{/headeractions}}
-                </div>
-            </div>
-
-            <div class="col">
-                <div id="page-header-content">
-                    {{! Title. }}
-                    <div id="titlecontainer" class="d-flex align-items-center">
-                        {{#pagename}}
-                            <h1 id="page-header-title" class="align-self-start d-inline-block me-2">
-                                {{{pagename}}}
-                            </h1>
-                        {{/pagename}}
-                    </div>
-                    {{! Summary. }}
-                    {{#coursesummary}}
-                    <div id="page-header-summary" class="display-11 my-3 mx-1">
-                        {{{coursesummary}}}
-                    </div>
-                    {{/coursesummary}}
                 </div>
             </div>
         </div>
